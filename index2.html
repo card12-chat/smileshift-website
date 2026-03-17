@@ -293,20 +293,19 @@
         <div class="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center">
 
             <!-- Fullscreen Video Background -->
-            <div class="absolute inset-0 w-full h-full z-0 bg-smile-bg">
+            <div class="absolute inset-0 w-full h-full z-0 bg-smile-bg flex flex-col justify-start">
                 <!-- Video Element covering entire screen -->
                 <video id="hero-video" src="raw_files/VIDEO 4.mp4"
-                    class="w-full h-full object-cover object-center md:object-[5%_center] relative z-10 scale-[1.01]"
+                    class="w-full h-[75vh] md:h-full object-cover object-center md:object-[5%_center] relative z-10 scale-[1.01]"
                     muted playsinline preload="auto" disablePictureInPicture></video>
 
-                <!-- Cinematic Gradient Overlay for text readability based on Design System -->
                 <!-- Cinematic Gradient Overlay for text readability based on Design System -->
                 <div
                     class="absolute inset-0 bg-gradient-to-r from-white/30 via-white/10 to-transparent z-20 pointer-events-none md:w-[65%] mix-blend-overlay">
                 </div>
-                <!-- Bottom gradient for mobile readability -->
+                <!-- Bottom gradient for mobile readability to fade video edge -->
                 <div
-                    class="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-transparent z-20 pointer-events-none md:hidden h-full mix-blend-overlay">
+                    class="absolute bottom-0 left-0 w-full h-[35vh] bg-gradient-to-t from-smile-bg via-smile-bg/90 to-transparent z-20 pointer-events-none md:hidden pt-20">
                 </div>
             </div>
 
