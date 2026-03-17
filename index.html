@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmileShift | Beauty Tech Redefined</title>
+
+    <!-- Fonts from Design System 15 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- Scroll & Animation Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
+
+    <!-- Tailwind Config mapped perfectly to Design System 15 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            700: '#44403c',
+                            800: '#292524',
+                            900: '#1c1917',
+                        },
+                        smile: {
+                            base: '#FFFFFF',
+                            bg: '#F5F6FA',
+                            text: '#111827',
+                            purple: {
+                                main: '#5A2C8C',
+                                vivid: '#7B3FC7',
+                                light: '#A875D6',
+                                glow: '#E4D6F5'
+                            },
+                            blue: {
+                                tech: '#1E5CC6',
+                                glow: '#D1E0FA'
+                            },
+                            neutral: '#6B7280',
+                            success: '#16A34A',
+                            successLight: '#22C55E'
+                        }
+                    },
+                    backgroundImage: {
+                        'brand-gradient': 'linear-gradient(135deg, #5A2C8C 0%, #7B3FC7 35%, #4A56C9 65%, #1E5CC6 100%)',
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 8s ease-in-out infinite 2s',
+                        'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Base Styling & FX -->
+    <style>
+        /* Smooth Scroll Setup */
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        .lenis.lenis-scrolling iframe {
+            pointer-events: none;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            /* Explicitly white for premium feel */
+            color: #111827;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        .text-outline-purple {
+            -webkit-text-stroke: 1px #7B3FC7;
+            color: transparent;
+        }
+
+        /* Noise Texture */
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Beam Button Animation */
+        @keyframes spinAround {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .btn-beam {
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+            border-radius: 9999px;
+        }
+
+        .btn-beam::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            z-index: -1;
+            background: conic-gradient(from 90deg at 50% 50%, #f3f4f6 0%, #111827 50%, #f3f4f6 100%);
+            animation: spinAround 4s linear infinite;
+            border-radius: inherit;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .btn-beam:hover::before {
+            opacity: 1;
+        }
+
+        .btn-beam-content {
+            background-color: #111827;
+            color: white;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        /* Scroll Driven Video Tweaks */
+        .video-container {
+            /* Ensures smooth rendering */
+            will-change: transform, opacity;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+
+        /* Ghost Glows */
+        .premium-glow-purple {
+            background: radial-gradient(circle at center, rgba(123, 63, 199, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+            mix-blend-mode: multiply;
+        }
+
+        /* Reveal Utils */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            filter: blur(10px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-smile-purple-main selection:text-white relative bg-white">
+
+    <!-- Global Noise Overlay -->
+    <div class="noise"></div>
+
+    <!-- MAIN WRAPPER -->
+    <main class="w-full relative">
+
+        <!-- HEADER (Sticky, Minimalist) -->
+        <header
+            class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/50 backdrop-blur-md border-b border-stone-100 h-[72px] flex items-center"
+            id="main-header">
+            <div class="max-w-[1440px] w-full mx-auto px-6 md:px-12 flex justify-between items-center">
+
+                <!-- Logo -->
+                <div class="flex items-center gap-2 group cursor-pointer w-32">
+                    <div
+                        class="w-6 h-6 rounded flex items-center justify-center bg-brand-gradient text-white transition-transform duration-500 group-hover:scale-110 shadow-md shadow-smile-purple-main/20">
+                        <iconify-icon icon="solar:sparkles-bold-duotone" class="text-sm"></iconify-icon>
+                    </div>
+                    <span class="font-display font-medium tracking-tight text-base text-smile-text uppercase">Smile<span
+                            class="text-smile-purple-main">Shift</span></span>
+                </div>
+
+                <!-- Center Nav -->
+                <nav class="hidden md:flex flex-1 justify-center items-center gap-10">
+                    <a href="#technology"
+                        class="text-[11px] font-mono uppercase tracking-[0.15em] text-stone-500 hover:text-smile-purple-main transition-colors font-medium">Technology</a>
+                    <a href="#results"
+                        class="text-[11px] font-mono uppercase tracking-[0.15em] text-stone-500 hover:text-smile-purple-main transition-colors font-medium">Results</a>
+                    <a href="#how-it-works"
+                        class="text-[11px] font-mono uppercase tracking-[0.15em] text-stone-500 hover:text-smile-purple-main transition-colors font-medium">How
+                        it Works</a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="flex items-center justify-end w-32">
+                    <button class="text-stone-800 hover:text-smile-purple-main transition-colors">
+                        <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+                    </button>
+                    <!-- Mobile Menu Trigger -->
+                    <button class="ml-4 md:hidden text-stone-800">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO SECTION (Extended height for scroll scrub) -->
+        <section id="hero" class="relative w-full bg-smile-bg">
+            <!-- 
+               This wrapper creates an artificially long scroll area.
+               The content inside will stick to the screen while we scroll through this space. 
+            -->
+            <div id="hero-scroll-container" class="relative w-full" style="height: 400vh;">
+
+                <!-- STICKY VIEWPORT -->
+                <div
+                    class="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center bg-white border-b border-stone-200">
+
+                    <!-- Background Atmosphere (from Design System) -->
+                    <div class="absolute inset-0 pointer-events-none z-0">
+                        <!-- Tech Grid -->
+                        <div
+                            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgc3Ryb2tlPSJyZ2JhKDAsIDAsIDAsIDAuMDMpIiBmaWxsPSJub25lIj48cGF0aCBkPSJNMCAwdjQwTTQwIDRoLTQwIi8+PC9nPjwvc3ZnPg==')] opacity-50">
+                        </div>
+                        <!-- Glows -->
+                        <div
+                            class="absolute top-[-20%] left-[-10%] w-[800px] h-[800px] bg-smile-purple-main/5 rounded-full blur-[120px] mix-blend-multiply opacity-60 animate-pulse-glow">
+                        </div>
+                        <div
+                            class="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] bg-smile-blue-tech/5 rounded-full blur-[100px] mix-blend-multiply opacity-50">
+                        </div>
+                    </div>
+
+                    <!-- Layout Grid -->
+                    <div
+                        class="relative z-10 w-full max-w-[1440px] mx-auto h-full grid grid-cols-1 lg:grid-cols-12 px-6 md:px-12 pt-[72px] lg:pt-0">
+
+                        <!-- LEFT COLUMN (Text Content) -->
+                        <div
+                            class="col-span-12 lg:col-span-6 flex flex-col justify-center h-full pr-0 lg:pr-12 relative z-20">
+
+                            <!-- Tech Badge -->
+                            <div class="inline-flex items-center gap-2 mb-8 reveal-up delay-100">
+                                <span
+                                    class="w-2 h-2 bg-smile-successLight rounded-full shadow-[0_0_10px_#22C55E] animate-pulse"></span>
+                                <span
+                                    class="text-xs font-mono uppercase tracking-widest text-smile-purple-vivid font-medium bg-smile-purple-vivid/10 px-3 py-1.5 rounded-full border border-smile-purple-vivid/20">V34
+                                    Chromatic Balance</span>
+                            </div>
+
+                            <!-- Headline -->
+                            <h1
+                                class="font-display text-5xl md:text-7xl lg:text-[6rem] font-bold tracking-tighter leading-[0.85] mb-8 flex flex-col items-start mix-blend-darken text-smile-text reveal-up delay-200">
+                                <span>Transforme</span>
+                                <span>seu sorriso</span>
+                                <span class="text-outline-purple mt-2">em 30 minutos.</span>
+                            </h1>
+
+                            <!-- Subheadline -->
+                            <p
+                                class="text-lg md:text-xl text-stone-500 max-w-lg leading-relaxed font-light text-balance backdrop-blur-sm reveal-up delay-300">
+                                Tecnologia estética SmileShift para melhorar visualmente o tom do sorriso com aplicação
+                                rápida, confortável e premium.
+                            </p>
+
+                            <!-- CTAs -->
+                            <div class="mt-12 flex flex-wrap gap-4 reveal-up delay-400">
+                                <!-- Primary Action Button -->
+                                <button class="btn-beam px-[1px] py-[1px] group">
+                                    <div
+                                        class="btn-beam-content px-8 py-4 bg-smile-text group-hover:bg-smile-purple-main transition-colors flex items-center gap-3">
+                                        <span
+                                            class="font-sans text-[12px] uppercase tracking-widest font-medium text-white">Comprar
+                                            Agora</span>
+                                        <i data-lucide="arrow-right"
+                                            class="w-4 h-4 text-white group-hover:translate-x-1 transition-transform"></i>
+                                    </div>
+                                </button>
+
+                                <!-- Ghost Secondary Button -->
+                                <button
+                                    class="px-8 py-4 border border-stone-300 hover:border-smile-purple-light hover:bg-smile-purple-glow/30 transition-all rounded-full text-smile-text font-sans text-[12px] uppercase tracking-widest font-medium bg-white/50 backdrop-blur-sm">
+                                    Como Funciona
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- RIGHT COLUMN (Video Content) -->
+                        <div
+                            class="col-span-12 lg:col-span-6 relative h-full flex items-center justify-center pt-12 lg:pt-0">
+
+                            <!-- Floating Premium Visual Wrapper -->
+                            <div
+                                class="relative w-full max-w-[600px] aspect-[4/5] lg:aspect-square flex items-center justify-center reveal-up delay-300 group">
+
+                                <!-- Background Glow behind Video to frame it beautifully -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div
+                                        class="w-4/5 h-4/5 premium-glow-purple rounded-full blur-[60px] group-hover:scale-105 transition-transform duration-1000 opacity-90">
+                                    </div>
+                                </div>
+
+                                <!-- The Video Container -->
+                                <!-- We apply rounded corners, subtle border, and deep shadow to make it feel like an Object -->
+                                <div
+                                    class="relative z-10 w-full h-full p-4 md:p-8 animate-float group-hover:scale-[1.02] transition-transform duration-1000">
+                                    <div
+                                        class="w-full h-full rounded-3xl overflow-hidden border border-white/60 shadow-2xl shadow-smile-purple-main/20 bg-white/40 backdrop-blur-xl relative video-container">
+
+                                        <!-- Video itself -->
+                                        <!-- Note: muted playsinline required for iOS smooth playback; preload=auto ensures frames are ready -->
+                                        <video id="hero-video" src="raw_files/VIDEO 2.mp4"
+                                            class="w-full h-full object-cover scale-[1.01]" preload="auto" muted
+                                            playsinline></video>
+
+                                        <!-- Inner subtle gradient overlay to blend corners -->
+                                        <div
+                                            class="absolute inset-0 shadow-[inset_0_0_40px_rgba(255,255,255,0.8)] pointer-events-none rounded-3xl">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Init Icons
+        lucide.createIcons();
+
+        // 1. Initialize Lenis for Premium Smooth Scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        // Sync Lenis with GSAP ScrollTrigger
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time) => { lenis.raf(time * 1000) });
+        gsap.ticker.lagSmoothing(0);
+
+        // 2. Reveal Observer for specific entrance items
+        document.addEventListener("DOMContentLoaded", () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        // Optional: observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+        });
+
+        // 3. Scroll-Driven Video Playback Logic (Apple Style)
+        const video = document.getElementById('hero-video');
+        const scrollContainer = document.getElementById('hero-scroll-container');
+
+        let videoDuration = 0;
+        let targetTime = 0;
+        let currentTime = 0;
+        // Ease factor controls the "weight" or lag of the video catching up to the scroll.
+        // Lower = more lag/buttery. Higher = stiffer/snappier.
+        const easeFactor = 0.08;
+
+        // Wait for video metadata to know the total duration
+        video.addEventListener('loadedmetadata', () => {
+            videoDuration = video.duration;
+            video.pause(); // Ensure it doesn't autoplay
+
+            // Calculate exact target time based on scroll progress of the container
+            ScrollTrigger.create({
+                trigger: scrollContainer,
+                start: "top top",
+                end: "bottom bottom",
+                onUpdate: (self) => {
+                    // Map scroll progress (0 to 1) to video duration
+                    targetTime = self.progress * videoDuration;
+                }
+            });
+
+            // Start the lerp loop
+            requestAnimationFrame(updateVideoProgress);
+        });
+
+        // The Lerp function makes the video play smoothly even if scrolling is fast
+        function updateVideoProgress() {
+            // Lerp formulation: current = current + (target - current) * ease
+            // This pulls the currentTime smoothly towards targetTime
+            currentTime += (targetTime - currentTime) * easeFactor;
+
+            // Only update if there is a meaningful difference to save performance
+            if (Math.abs(currentTime - video.currentTime) > 0.01) {
+                video.currentTime = currentTime;
+            }
+
+            requestAnimationFrame(updateVideoProgress);
+        }
+
+        // Optional: Ensure video metadata loads on iOS
+        // A tiny invisible play/pause forces mobile safari to fetch the frame
+        document.body.addEventListener('touchstart', function () {
+            if (video.readyState === 0) {
+                video.play().then(() => { video.pause() }).catch(() => { });
+            }
+        }, { once: true });
+
+        // 4. Header shrink effect on scroll
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2', 'shadow-sm');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.remove('py-2', 'shadow-sm');
+                header.classList.add('py-4');
+            }
+        });
+    </script>
+</body>
+
+</html>
