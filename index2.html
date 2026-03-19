@@ -365,19 +365,18 @@
                         </button>
                     </div>
 
-                    <!-- Scroll Down Indicator -->
-                    <div class="absolute -bottom-24 left-0 hidden lg:flex items-center gap-3 opacity-60">
-                        <div class="w-px h-12 bg-stone-300 relative overflow-hidden">
-                            <div
-                                class="absolute top-0 left-0 w-full h-1/2 bg-smile-purple-main animate-[float_2s_ease-in-out_infinite]">
-                            </div>
-                        </div>
-                        <span
-                            class="text-[10px] uppercase font-mono tracking-widest text-stone-500 transform -rotate-90 origin-left translate-y-6">Scroll</span>
-                    </div>
                 </div>
-
             </div>
+
+            <!-- Centered Scroll Indicator for Hero -->
+            <a id="hero-scroll-indicator" href="#second-fold" aria-label="Role para descobrir mais"
+                class="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-70 hover:opacity-100 transition-opacity duration-500 z-[100] group cursor-pointer">
+                <span
+                    class="text-[0.55rem] font-mono uppercase tracking-[0.3em] text-smile-purple-vivid font-bold drop-shadow-sm">Descubra</span>
+                <div class="w-[1px] h-10 md:h-14 bg-black/10 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1/2 bg-smile-purple-main animate-scroll-line"></div>
+                </div>
+            </a>
 
         </div>
     </div>
@@ -597,10 +596,11 @@
 
             // 4. Scroll-Driven Fade & Blur using GSAP
             const heroText = document.getElementById('hero-text-content');
+            const scrollIndicator = document.getElementById('hero-scroll-indicator');
 
             // This applies a true GSAP scrub tween to the entire text block, 
             // ensuring both opacity and blur interpolate perfectly with scroll.
-            gsap.to(heroText, {
+            gsap.to([heroText, scrollIndicator], {
                 scrollTrigger: {
                     trigger: "#hero-scroll-container",
                     start: "top top", // When scrolling starts
