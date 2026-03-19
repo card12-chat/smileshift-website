@@ -378,177 +378,94 @@
     </div>
 
     <!-- Rest of the page content can go below -->
-    <!-- Second Fold: Benefits & Technology -->
+    <!-- Second Fold: Emotional Benefits & Conversion -->
     <section
-        class="relative w-full bg-white -mt-[25vh] md:mt-0 pt-32 pb-24 md:py-32 lg:py-48 overflow-hidden z-20 rounded-t-[3rem] md:rounded-none">
+        class="relative w-full bg-white -mt-[25vh] md:mt-0 pt-32 pb-24 md:py-32 lg:py-40 overflow-hidden z-20 rounded-t-[3rem] md:rounded-none">
 
         <!-- Huge Background Watermark -->
-        <div
-            class="absolute top-10 md:top-20 left-1/2 -translate-x-1/2 text-[18vw] lg:text-[15vw] font-display font-bold tracking-tighter text-black/[0.03] whitespace-nowrap pointer-events-none select-none z-0">
+        <div class="absolute top-10 md:top-20 right-[-5%] text-[20vw] font-display font-bold tracking-tighter whitespace-nowrap pointer-events-none select-none z-0 opacity-20"
+            style="-webkit-text-stroke: 2px #A875D6; color: transparent;">
             SMILESHIFT
         </div>
 
         <div class="max-w-[1440px] w-full mx-auto px-6 md:px-12 relative z-10">
 
-            <!-- Top Section: Headline & Subhead -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 mb-16 md:mb-24 reveal-up">
-                <div class="flex flex-col">
-                    <div class="inline-flex items-center gap-3 mb-6">
-                        <span class="w-1.5 h-1.5 bg-smile-purple-vivid rounded-full"></span>
-                        <span
-                            class="text-xs font-mono uppercase tracking-[0.2em] text-smile-purple-main font-medium">Benefícios</span>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+
+                <!-- Left/Main: Visual Emotional Image Protagonist -->
+                <div
+                    class="lg:col-span-7 relative rounded-[2.5rem] overflow-hidden bg-smile-bg/50 border border-black/[0.03] group reveal-up shadow-2xl shadow-smile-purple-main/5 aspect-[4/5] md:aspect-square lg:aspect-[4/5]">
+                    <!-- Parallax image wrapper (Micro-interaction over time) -->
+                    <div class="absolute inset-0 w-full h-full">
+                        <img src="raw_files/IMAGEM 1.png" alt="SmileShift Application"
+                            class="w-full h-full object-cover transform transition-transform duration-[2000ms] ease-out group-hover:scale-[1.05]">
                     </div>
+                </div>
+
+                <!-- Right: High-Impact Minimal Copy -->
+                <div class="lg:col-span-5 flex flex-col justify-center reveal-up delay-100">
 
                     <h2
-                        class="font-display text-4xl md:text-5xl lg:text-[4.5rem] font-bold tracking-tighter text-smile-text leading-[1.05] mb-6">
+                        class="font-display text-4xl md:text-5xl lg:text-[4rem] font-bold tracking-tighter text-smile-text leading-[1.05] mb-6">
                         <span class="block">Sorriso mais branco,</span>
                         <span class="block text-smile-text/30">visivelmente melhor<br>em minutos.</span>
                     </h2>
 
-                    <p class="text-lg md:text-xl text-smile-text/70 max-w-xl leading-relaxed font-light mt-4">
-                        Tecnologia estética SmileShift™ desenvolvida para melhorar a aparência dos dentes, reduzir tons
-                        amarelados e realçar a luminosidade do sorriso de forma <strong
-                            class="text-smile-purple-main font-medium">rápida, prática e confortável.</strong>
+                    <p class="text-lg md:text-xl text-smile-text/70 mb-12 leading-relaxed font-light">
+                        Clareamento dental em casa com tecnologia SmileShift™, <strong
+                            class="text-smile-purple-vivid font-medium">rápido, simples e eficaz.</strong>
                     </p>
-                </div>
-            </div>
 
-            <!-- Bottom Section: Image & Benefits List -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
-
-                <!-- Left: Product Image -->
-                <div
-                    class="lg:col-span-6 relative rounded-3xl overflow-hidden bg-white shadow-2xl shadow-smile-purple-main/5 border border-black/[0.04] group reveal-up delay-100">
-                    <!-- Subtle overlay to blend any bright spots -->
-                    <div
-                        class="absolute inset-0 bg-gradient-to-tr from-smile-purple-main/5 to-transparent z-10 pointer-events-none mix-blend-overlay">
-                    </div>
-
-                    <!-- IMAGEM 1.png placed here -->
-                    <img src="raw_files/IMAGEM 1.png" alt="SmileShift Application"
-                        class="w-full h-auto object-cover transform transition-transform duration-1000 group-hover:scale-[1.03]">
-
-                    <!-- Floating Design System Badge -->
-                    <div
-                        class="absolute top-6 left-6 z-20 glass-panel rounded-2xl px-5 py-3 flex flex-col gap-1 border border-white/60">
-                        <span
-                            class="text-[0.65rem] font-mono uppercase tracking-[0.2em] text-smile-text/50">Tecnologia</span>
-                        <span class="font-display font-bold text-sm text-smile-text">V34 Chromatic</span>
-                    </div>
-                </div>
-
-                <!-- Right: Benefits -->
-                <div class="lg:col-span-6 flex flex-col gap-6 reveal-up delay-200">
-
-                    <div class="flex flex-col space-y-2">
+                    <!-- Minimal Benefits (Max 4 - Scannable) -->
+                    <div class="flex flex-col space-y-8 mb-12">
                         <!-- Item 1 -->
-                        <div
-                            class="flex items-start gap-5 p-4 -ml-4 rounded-2xl hover:bg-white transition-all duration-300 border border-transparent hover:border-black/[0.04] hover:shadow-lg hover:shadow-black/[0.02] group cursor-default">
+                        <div class="flex items-center gap-5 group cursor-default">
                             <div
-                                class="font-mono text-xs font-bold text-smile-text/20 group-hover:text-smile-purple-vivid transition-colors mt-1">
-                                01</div>
-                            <p class="text-base text-smile-text/80 leading-relaxed font-medium">Clareamento dental em
-                                casa com resultado visível já na primeira aplicação</p>
+                                class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main group-hover:bg-smile-purple-main group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm flex-shrink-0">
+                                <iconify-icon icon="lucide:sparkles" class="text-xl"></iconify-icon>
+                            </div>
+                            <p class="text-lg text-smile-text/80 font-medium">Resultado visível já na <strong
+                                    class="text-smile-purple-main font-semibold">primeira aplicação</strong></p>
                         </div>
 
                         <!-- Item 2 -->
-                        <div
-                            class="flex items-start gap-5 p-4 -ml-4 rounded-2xl hover:bg-white transition-all duration-300 border border-transparent hover:border-black/[0.04] hover:shadow-lg hover:shadow-black/[0.02] group cursor-default">
+                        <div class="flex items-center gap-5 group cursor-default">
                             <div
-                                class="font-mono text-xs font-bold text-smile-text/20 group-hover:text-smile-purple-vivid transition-colors mt-1">
-                                02</div>
-                            <p class="text-base text-smile-text/80 leading-relaxed font-medium">Neutraliza o aspecto
-                                amarelado causado por café, vinho e hábitos diários</p>
+                                class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main group-hover:bg-smile-purple-main group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm flex-shrink-0">
+                                <iconify-icon icon="lucide:sun" class="text-xl"></iconify-icon>
+                            </div>
+                            <p class="text-lg text-smile-text/80 font-medium"><strong
+                                    class="text-smile-purple-main font-semibold">Neutraliza</strong> o amarelado
+                                rapidamente</p>
                         </div>
 
                         <!-- Item 3 -->
-                        <div
-                            class="flex items-start gap-5 p-4 -ml-4 rounded-2xl hover:bg-white transition-all duration-300 border border-transparent hover:border-black/[0.04] hover:shadow-lg hover:shadow-black/[0.02] group cursor-default">
+                        <div class="flex items-center gap-5 group cursor-default">
                             <div
-                                class="font-mono text-xs font-bold text-smile-text/20 group-hover:text-smile-purple-vivid transition-colors mt-1">
-                                03</div>
-                            <p class="text-base text-smile-text/80 leading-relaxed font-medium">Dentes mais brancos e
-                                sorriso mais iluminado em apenas 30 minutos</p>
+                                class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main group-hover:bg-smile-purple-main group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm flex-shrink-0">
+                                <iconify-icon icon="lucide:clock" class="text-xl"></iconify-icon>
+                            </div>
+                            <p class="text-lg text-smile-text/80 font-medium">Dentes mais claros em apenas <strong
+                                    class="text-smile-purple-main font-semibold">30 minutos</strong></p>
                         </div>
 
                         <!-- Item 4 -->
-                        <div
-                            class="flex items-start gap-5 p-4 -ml-4 rounded-2xl hover:bg-white transition-all duration-300 border border-transparent hover:border-black/[0.04] hover:shadow-lg hover:shadow-black/[0.02] group cursor-default">
+                        <div class="flex items-center gap-5 group cursor-default">
                             <div
-                                class="font-mono text-xs font-bold text-smile-text/20 group-hover:text-smile-purple-vivid transition-colors mt-1">
-                                04</div>
-                            <p class="text-base text-smile-text/80 leading-relaxed font-medium">Fórmula suave que
-                                respeita o esmalte e evita desconforto</p>
-                        </div>
-
-                        <!-- Item 5 -->
-                        <div
-                            class="flex items-start gap-5 p-4 -ml-4 rounded-2xl hover:bg-white transition-all duration-300 border border-transparent hover:border-black/[0.04] hover:shadow-lg hover:shadow-black/[0.02] group cursor-default">
-                            <div
-                                class="font-mono text-xs font-bold text-smile-text/20 group-hover:text-smile-purple-vivid transition-colors mt-1">
-                                05</div>
-                            <p class="text-base text-smile-text/80 leading-relaxed font-medium">Aplicação simples, sem
-                                necessidade de procedimentos clínicos</p>
-                        </div>
-
-                        <!-- Item 6 -->
-                        <div
-                            class="flex items-start gap-5 p-4 -ml-4 rounded-2xl hover:bg-white transition-all duration-300 border border-transparent hover:border-black/[0.04] hover:shadow-lg hover:shadow-black/[0.02] group cursor-default">
-                            <div
-                                class="font-mono text-xs font-bold text-smile-text/20 group-hover:text-smile-purple-vivid transition-colors mt-1">
-                                06</div>
-                            <p class="text-base text-smile-text/80 leading-relaxed font-medium">Ideal para quem busca
-                                estética dental moderna e prática</p>
-                        </div>
-
-                        <!-- Item 7 -->
-                        <div
-                            class="flex items-start gap-5 p-4 -ml-4 rounded-2xl hover:bg-white transition-all duration-300 border border-transparent hover:border-black/[0.04] hover:shadow-lg hover:shadow-black/[0.02] group cursor-default">
-                            <div
-                                class="font-mono text-xs font-bold text-smile-text/20 group-hover:text-smile-purple-vivid transition-colors mt-1">
-                                07</div>
-                            <p class="text-base text-smile-text/80 leading-relaxed font-medium">Melhora instantânea na
-                                aparência do sorriso para fotos, eventos e encontros</p>
+                                class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main group-hover:bg-smile-purple-main group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm flex-shrink-0">
+                                <iconify-icon icon="lucide:shield-check" class="text-xl"></iconify-icon>
+                            </div>
+                            <p class="text-lg text-smile-text/80 font-medium">Fórmula suave que <strong
+                                    class="text-smile-purple-main font-semibold">não agride o esmalte</strong></p>
                         </div>
                     </div>
 
-                    <!-- Reinforcement Block -->
-                    <div class="mt-6 pt-10 border-t border-black/[0.05] flex flex-col">
-                        <h3 class="font-display text-2xl md:text-3xl font-bold tracking-tight text-smile-text mb-6">Um
-                            sorriso mais branco muda tudo.</h3>
-
-                        <div class="flex flex-wrap gap-3 mb-8">
-                            <span
-                                class="px-5 py-2.5 rounded-full border border-black/5 text-smile-purple-vivid text-xs font-mono uppercase tracking-widest font-bold bg-white shadow-sm">Mais
-                                confiança.</span>
-                            <span
-                                class="px-5 py-2.5 rounded-full border border-black/5 text-smile-purple-vivid text-xs font-mono uppercase tracking-widest font-bold bg-white shadow-sm">Mais
-                                presença.</span>
-                            <span
-                                class="px-5 py-2.5 rounded-full border border-black/5 text-smile-purple-vivid text-xs font-mono uppercase tracking-widest font-bold bg-white shadow-sm">Mais
-                                impacto.</span>
-                        </div>
-
-                        <p class="text-smile-text/70 mb-8 max-w-sm font-medium leading-relaxed">
-                            SmileShift™ é a forma mais rápida e prática de elevar a estética do seu sorriso sem sair de
-                            casa.
-                        </p>
-
-                        <div
-                            class="p-6 rounded-2xl bg-gradient-to-br from-smile-purple-main to-smile-purple-vivid text-white relative overflow-hidden group hover:shadow-xl hover:shadow-smile-purple-main/20 transition-shadow">
-                            <div
-                                class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSIvPjwvc3ZnPg==')] opacity-50">
-                            </div>
-                            <div
-                                class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                                <p class="font-display font-medium text-lg md:text-xl leading-snug">Experimente a
-                                    tecnologia que está transformando a forma de clarear os dentes.</p>
-                                <button
-                                    class="shrink-0 w-12 h-12 rounded-full bg-white text-smile-purple-main flex items-center justify-center transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-[-5deg]">
-                                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <!-- Emotional Final Phrase (Moved from Image) -->
+                    <div class="pt-8 border-t border-black/5 reveal-up delay-200">
+                        <h3
+                            class="font-display text-3xl md:text-4xl leading-snug font-bold tracking-tight text-smile-text">
+                            Um sorriso mais branco<br><span class="text-smile-purple-main">muda tudo.</span>
+                        </h3>
                     </div>
 
                 </div>
