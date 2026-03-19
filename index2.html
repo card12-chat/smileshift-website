@@ -61,11 +61,16 @@
                     },
                     animation: {
                         'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'scroll-line': 'scrollLine 2s cubic-bezier(0.4, 0, 0.2, 1) infinite',
                     },
                     keyframes: {
                         pulseGlow: {
                             '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
                             '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+                        },
+                        scrollLine: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(200%)' },
                         }
                     }
                 }
@@ -394,11 +399,20 @@
 
                 <!-- Left/Main: Visual Emotional Image Protagonist -->
                 <div
-                    class="lg:col-span-7 relative rounded-[2.5rem] overflow-hidden bg-smile-bg/50 border border-black/[0.03] group reveal-up shadow-2xl shadow-smile-purple-main/5 aspect-[4/5] md:aspect-square lg:aspect-[4/5]">
-                    <!-- Parallax image wrapper (Micro-interaction over time) -->
-                    <div class="absolute inset-0 w-full h-full">
-                        <img src="raw_files/IMAGEM 1.png" alt="SmileShift Application"
-                            class="w-full h-full object-cover transform transition-transform duration-[2000ms] ease-out group-hover:scale-[1.05]">
+                    class="lg:col-span-7 relative group reveal-up aspect-[4/5] md:aspect-square lg:aspect-[4/5] z-10 w-full h-full">
+
+                    <!-- Premium Purple Glow Behind Image -->
+                    <div
+                        class="absolute inset-0 bg-smile-purple-main blur-[100px] opacity-20 group-hover:opacity-40 group-hover:scale-110 transition-all duration-[2000ms] -z-10 rounded-full animate-pulse-glow">
+                    </div>
+
+                    <!-- Image Container -->
+                    <div
+                        class="absolute inset-0 rounded-[2.5rem] overflow-hidden bg-smile-bg/50 border border-black/[0.03] shadow-2xl shadow-smile-purple-main/10 z-10">
+                        <div class="absolute inset-0 w-full h-full">
+                            <img src="raw_files/IMAGEM 1.png" alt="SmileShift Application"
+                                class="w-full h-full object-cover transform transition-transform duration-[3000ms] ease-out group-hover:scale-[1.05]">
+                        </div>
                     </div>
                 </div>
 
@@ -413,7 +427,8 @@
 
                     <p class="text-lg md:text-xl text-smile-text/70 mb-12 leading-relaxed font-light">
                         Clareamento dental em casa com tecnologia SmileShift™, <strong
-                            class="text-smile-purple-vivid font-medium">rápido, simples e eficaz.</strong>
+                            class="text-smile-purple-vivid font-medium">rápido, simples e com resultado
+                            imediato.</strong>
                     </p>
 
                     <!-- Minimal Benefits (Max 4 - Scannable) -->
@@ -434,9 +449,10 @@
                                 class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main group-hover:bg-smile-purple-main group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm flex-shrink-0">
                                 <iconify-icon icon="lucide:sun" class="text-xl"></iconify-icon>
                             </div>
-                            <p class="text-lg text-smile-text/80 font-medium"><strong
-                                    class="text-smile-purple-main font-semibold">Neutraliza</strong> o amarelado
-                                rapidamente</p>
+                            <p class="text-lg text-smile-text/80 font-medium">Elimina o aspecto amarelado causado por
+                                <strong class="text-smile-purple-main font-semibold">café, vinho e hábitos
+                                    diários</strong>
+                            </p>
                         </div>
 
                         <!-- Item 3 -->
@@ -445,7 +461,7 @@
                                 class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main group-hover:bg-smile-purple-main group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm flex-shrink-0">
                                 <iconify-icon icon="lucide:clock" class="text-xl"></iconify-icon>
                             </div>
-                            <p class="text-lg text-smile-text/80 font-medium">Dentes mais claros em apenas <strong
+                            <p class="text-lg text-smile-text/80 font-medium">Dentes mais brancos em apenas <strong
                                     class="text-smile-purple-main font-semibold">30 minutos</strong></p>
                         </div>
 
@@ -455,22 +471,47 @@
                                 class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main group-hover:bg-smile-purple-main group-hover:text-white transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 shadow-sm flex-shrink-0">
                                 <iconify-icon icon="lucide:shield-check" class="text-xl"></iconify-icon>
                             </div>
-                            <p class="text-lg text-smile-text/80 font-medium">Fórmula suave que <strong
-                                    class="text-smile-purple-main font-semibold">não agride o esmalte</strong></p>
+                            <p class="text-lg text-smile-text/80 font-medium">Fórmula suave que respeita o esmalte e
+                                <strong class="text-smile-purple-main font-semibold">evita sensibilidade</strong>
+                            </p>
                         </div>
+                    </div>
+
+                    <!-- Micro Copy de Conversão (Quebra de Objetos) -->
+                    <div
+                        class="mb-12 flex flex-wrap items-center gap-x-4 gap-y-3 text-smile-purple-vivid font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold reveal-up delay-150">
+                        <div class="flex items-center gap-2"><iconify-icon icon="lucide:badge-check"
+                                class="text-base"></iconify-icon> Sem dor</div>
+                        <span class="w-1 h-1 rounded-full bg-smile-purple-vivid/30 hidden md:block"></span>
+                        <div class="flex items-center gap-2"><iconify-icon icon="lucide:badge-check"
+                                class="text-base"></iconify-icon> Sem complicação</div>
+                        <span class="w-1 h-1 rounded-full bg-smile-purple-vivid/30 hidden md:block"></span>
+                        <div class="flex items-center gap-2"><iconify-icon icon="lucide:badge-check"
+                                class="text-base"></iconify-icon> Sem clínica</div>
                     </div>
 
                     <!-- Emotional Final Phrase (Moved from Image) -->
                     <div class="pt-8 border-t border-black/5 reveal-up delay-200">
                         <h3
-                            class="font-display text-3xl md:text-4xl leading-snug font-bold tracking-tight text-smile-text">
-                            Um sorriso mais branco<br><span class="text-smile-purple-main">muda tudo.</span>
+                            class="font-display text-2xl md:text-3xl leading-snug font-bold tracking-tight text-smile-text">
+                            Um sorriso mais branco muda a forma como você se vê <br class="hidden xl:block">
+                            <span class="text-smile-purple-main">— e como o mundo te vê.</span>
                         </h3>
                     </div>
 
                 </div>
             </div>
         </div>
+
+        <!-- Subtle Scroll Indicator for the Third Fold -->
+        <a href="#third-fold" aria-label="Role para descobrir mais"
+            class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-500 z-30 group cursor-pointer reveal-up delay-500">
+            <span
+                class="text-[0.6rem] font-mono uppercase tracking-[0.3em] text-smile-purple-main font-bold">Descubra</span>
+            <div class="w-[1px] h-12 bg-black/10 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1/2 bg-smile-purple-vivid animate-scroll-line"></div>
+            </div>
+        </a>
     </section>
 
     <!-- Script Execution -->
