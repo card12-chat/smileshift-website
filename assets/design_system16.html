@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>SmileShift | System 16</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        smile: {
+                            text: '#111827',
+                            purple: { main: '#5A2C8C', vivid: '#7B3FC7', light: '#A875D6', glow: '#E4D6F5' },
+                            blue: { tech: '#1E5CC6', glow: '#D1E0FA' },
+                        }
+                    },
+                    backgroundImage: {
+                        'brand-gradient': 'linear-gradient(135deg, #5A2C8C 0%, #7B3FC7 35%, #4A56C9 65%, #1E5CC6 100%)',
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'marquee': 'marquee 30s linear infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: { '0%, 100%': { opacity: '0.4', transform: 'scale(1)' }, '50%': { opacity: '0.8', transform: 'scale(1.05)' } },
+                        float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-20px)' } },
+                        marquee: { from: { transform: 'translateX(0)' }, to: { transform: 'translateX(-50%)' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --cursor-size: 20px;
+            --cursor-hover-size: 80px;
+        }
+
+        body {
+            background-color: #FAFAFA;
+            color: #111827;
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5a2c8c;
+        }
+
+        #cursor {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--cursor-size);
+            height: var(--cursor-size);
+            background-color: rgba(90, 44, 140, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s, height 0.3s, background-color 0.3s;
+        }
+
+        #cursor.hovered {
+            width: var(--cursor-hover-size);
+            height: var(--cursor-hover-size);
+            opacity: 0.15;
+            background-color: rgba(30, 92, 198, 0.5);
+            border: 1px solid rgba(90, 44, 140, 0.5);
+        }
+
+        .text-outline-purple {
+            -webkit-text-stroke: 1px #7B3FC7;
+            color: transparent;
+            transition: all 0.5s ease;
+        }
+
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(135deg, #5A2C8C 0%, #7B3FC7 35%, #4A56C9 65%, #1E5CC6 100%);
+        }
+
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(30px);
+            filter: blur(5px);
+            transition: all 1s ease;
+        }
+
+        .reveal-up.active {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .split-line span {
+            display: block;
+            transform: translateY(110%);
+            opacity: 0;
+            transition: transform 1s ease, opacity 1s ease;
+        }
+
+        .hero-revealed .split-line span,
+        .reveal-up.active .split-line span {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+            transition: all 0.5s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(123, 63, 199, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            transition: 0.5s;
+        }
+
+        .glass-panel:hover::before {
+            left: 100%;
+        }
+
+        .liquid-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+            animation: floatBlob 15s infinite alternate ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes floatBlob {
+            0% {
+                transform: scale(1) translate(0);
+            }
+
+            100% {
+                transform: scale(1.1) translate(40px, 40px);
+            }
+        }
+
+        .btn-beam {
+            position: relative;
+            overflow: hidden;
+            border-radius: 99px;
+            z-index: 1;
+            padding: 1px;
+        }
+
+        .btn-beam::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            z-index: -1;
+            background: conic-gradient(from 90deg, #E4D6F5, #7B3FC7, #E4D6F5);
+            animation: spin 4s linear infinite;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .btn-beam:hover::before {
+            opacity: 1;
+        }
+
+        .btn-beam-content {
+            background: #111827;
+            border-radius: 99px;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        }
+
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #FAFAFA;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        #preloader.loaded {
+            transform: translateY(-100%);
+        }
+
+        .loader-bar {
+            width: 200px;
+            height: 1px;
+            background: rgba(90, 44, 140, 0.1);
+            position: relative;
+        }
+
+        .loader-progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #5A2C8C;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .card-content-gradient {
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 40px, #E4D6F5 50px, rgba(245, 246, 250, 0.8) 100%);
+            background-size: 100% 100%;
+        }
+
+        .stack-section {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            height: 260px;
+            margin: 0 auto;
+            perspective: 1000px;
+        }
+
+        .stack-card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            border-radius: 1.5rem;
+        }
+
+        .s-1 {
+            transform: translateY(0) scale(1);
+            z-index: 3;
+            opacity: 1;
+        }
+
+        .s-2 {
+            transform: translateY(-20px) scale(0.95);
+            z-index: 2;
+            opacity: 0.8;
+        }
+
+        .s-3 {
+            transform: translateY(-40px) scale(0.9);
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .input-group {
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(17, 24, 39, 0.2);
+            padding: 10px 0;
+            color: #111827;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: rgba(17, 24, 39, 0.5);
+            pointer-events: none;
+            transition: 0.3s ease all;
+        }
+
+        .input-group input:focus {
+            border-bottom-color: #5A2C8C;
+        }
+
+        .input-group input:focus~label,
+        .input-group input:not(:placeholder-shown)~label {
+            top: -12px;
+            font-size: 0.75rem;
+            color: #5A2C8C;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-smile-purple-main selection:text-white pb-20 font-sans">
+
+    <div id="cursor"></div>
+    <div class="fixed inset-0 pointer-events-none z-[-1] bg-grid opacity-70"></div>
+    <div class="fixed inset-0 pointer-events-none z-[-1]">
+        <div class="liquid-blob bg-smile-purple-light" style="width: 500px; height: 500px; top: -10%; left: -10%;">
+        </div>
+        <div class="liquid-blob bg-smile-blue-tech"
+            style="width: 600px; height: 600px; bottom: -10%; right: -10%; animation-delay: -5s;"></div>
+    </div>
+
+    <div id="preloader">
+        <div class="flex flex-col items-center gap-4">
+            <span class="font-display tracking-[0.2em] text-xs uppercase text-smile-purple-main font-semibold">Iniciando
+                System 16</span>
+            <div class="loader-bar">
+                <div class="loader-progress" id="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-[1440px] mx-auto px-6 relative">
+        <!-- HEADER -->
+        <header class="pt-6 sticky top-0 z-50 transition-all duration-300 backdrop-blur-sm">
+            <div
+                class="glass-panel mx-auto max-w-6xl rounded-full px-6 py-4 flex items-center justify-between shadow-lg border border-white/60">
+                <div class="flex items-center gap-2 group nav-hover cursor-pointer">
+                    <div
+                        class="w-10 h-10 rounded-full bg-brand-gradient text-white flex items-center justify-center transition-transform duration-500 group-hover:rotate-12">
+                        <iconify-icon icon="solar:sparkles-bold-duotone" class="text-xl"></iconify-icon>
+                    </div>
+                    <span
+                        class="font-display font-medium tracking-tight text-xl text-smile-text hidden sm:block">SMILE<span
+                            class="text-smile-purple-main">SHIFT</span></span>
+                </div>
+                <nav
+                    class="hidden md:flex gap-8 text-xs font-mono uppercase tracking-widest text-stone-500 font-medium">
+                    <a href="#hero" class="nav-hover hover:text-smile-purple-main transition-colors">Hero</a>
+                    <a href="#typography" class="nav-hover hover:text-smile-purple-main transition-colors">Typo</a>
+                    <a href="#colors" class="nav-hover hover:text-smile-purple-main transition-colors">Colors</a>
+                    <a href="#components" class="nav-hover hover:text-smile-purple-main transition-colors">UI</a>
+                </nav>
+                <div class="nav-hover hidden md:block">
+                    <button class="btn-beam h-10 w-36">
+                        <div
+                            class="btn-beam-content text-[10px] font-mono uppercase tracking-widest group-hover:bg-smile-purple-main">
+                            Download</div>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- HERO -->
+        <section id="hero" class="min-h-[90vh] flex flex-col items-center justify-center py-20 relative">
+            <!-- Floating Tech Orbs -->
+            <div class="absolute right-10 top-1/4 animate-float-delayed opacity-80 mix-blend-multiply">
+                <div
+                    class="w-32 h-32 rounded-3xl bg-white border border-stone-200 shadow-2xl flex items-center justify-center rotate-12">
+                    <div class="w-20 h-20 rounded-full bg-smile-purple-glow blur-xl absolute"></div>
+                    <iconify-icon icon="lucide:layers"
+                        class="text-4xl text-smile-purple-vivid relative z-10"></iconify-icon>
+                </div>
+            </div>
+
+            <div class="text-center w-full max-w-5xl z-10 reveal-up">
+                <div class="inline-flex glass-panel items-center gap-2 px-5 py-2 rounded-full mb-8 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-smile-purple-vivid animate-pulse"></span>
+                    <span
+                        class="text-[10px] font-mono uppercase tracking-widest text-smile-purple-main font-semibold">Novo
+                        Padrao Visual</span>
+                </div>
+
+                <h1
+                    class="font-display text-6xl md:text-8xl lg:text-[8rem] font-semibold tracking-tighter leading-[0.85] js-hero flex flex-col items-center">
+                    <span class="split-line"><span class="text-gradient drop-shadow-sm">Minimalist</span></span>
+                    <span class="split-line"><span
+                            class="text-outline-purple delay-100 hover:text-smile-purple-vivid transition-colors duration-500 cursor-default">Innovation.</span></span>
+                </h1>
+
+                <p class="mt-8 text-lg font-light text-stone-500 max-w-2xl mx-auto split-line">
+                    <span class="delay-200">A convergência entre estética branca absoluta, letterings transparentes e
+                        efeitos líquidos de performance imersiva.</span>
+                </p>
+
+                <div class="mt-12 flex gap-4 justify-center split-line">
+                    <span class="delay-200 flex gap-4">
+                        <button class="nav-hover btn-beam h-14 w-48 shadow-xl">
+                            <div
+                                class="btn-beam-content text-xs font-mono uppercase font-semibold gap-2 group-hover:bg-smile-purple-main">
+                                Explorar <iconify-icon icon="lucide:arrow-right"
+                                    class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                            </div>
+                        </button>
+                        <button
+                            class="nav-hover h-14 px-8 glass-panel rounded-full text-xs font-mono uppercase font-semibold text-smile-text hover:border-smile-purple-vivid transition-colors border-stone-300">
+                            Play Vídeo
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- TYPOGRAPHY -->
+        <section id="typography" class="py-24 border-t border-stone-200/50 reveal-up">
+            <div class="mb-16">
+                <span class="font-mono text-[10px] uppercase tracking-widest text-smile-purple-main">Pilar 01</span>
+                <h2 class="text-5xl font-display font-medium text-smile-text mt-2">Tipografia</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="glass-panel p-8 rounded-3xl nav-hover hover:-translate-y-2">
+                    <p class="font-mono text-[10px] text-stone-400 uppercase tracking-widest mb-6">Display</p>
+                    <p class="text-5xl font-display mb-2">Ag</p>
+                    <p class="text-xl font-display font-semibold mb-4">Space Grotesk</p>
+                    <div class="flex gap-2 font-mono text-[10px]"><span
+                            class="px-2 py-1 bg-white border border-stone-200 rounded">500</span><span
+                            class="px-2 py-1 bg-smile-text text-white rounded">700</span></div>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl nav-hover hover:-translate-y-2">
+                    <p class="font-mono text-[10px] text-stone-400 uppercase tracking-widest mb-6">Body</p>
+                    <p class="text-5xl font-sans mb-2">Aa</p>
+                    <p class="text-xl font-sans font-medium mb-4">Inter</p>
+                    <div class="flex gap-2 font-mono text-[10px]"><span
+                            class="px-2 py-1 bg-white border border-stone-200 rounded">300</span><span
+                            class="px-2 py-1 bg-smile-text text-white rounded">400</span></div>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl nav-hover hover:-translate-y-2">
+                    <p class="font-mono text-[10px] text-stone-400 uppercase tracking-widest mb-6">Mono</p>
+                    <p class="text-5xl font-mono mb-2">{}</p>
+                    <p class="text-xl font-mono font-medium mb-4">JetBrains Mono</p>
+                    <div class="flex gap-2 font-mono text-[10px]"><span
+                            class="px-2 py-1 bg-smile-text text-white rounded">400</span></div>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-10 shadow-lg border border-white/80">
+                <div class="divide-y divide-stone-200/50">
+                    <div class="grid grid-cols-12 py-6 items-center nav-hover group">
+                        <div class="col-span-3 text-[10px] font-mono text-stone-400 uppercase">H1 / Outline</div>
+                        <div class="col-span-6">
+                            <h1
+                                class="text-7xl font-display font-semibold text-outline-purple group-hover:translate-x-2 transition-transform">
+                                SmileShift</h1>
+                        </div>
+                        <div class="col-span-3 text-right text-[10px] font-mono text-stone-400">7rem / Space Grotesk
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-12 py-6 items-center nav-hover group">
+                        <div class="col-span-3 text-[10px] font-mono text-stone-400 uppercase">H2 / Section</div>
+                        <div class="col-span-6">
+                            <h2
+                                class="text-5xl font-display font-medium text-smile-text group-hover:translate-x-2 transition-transform">
+                                Tecnologia V34</h2>
+                        </div>
+                        <div class="col-span-3 text-right text-[10px] font-mono text-stone-400">3rem / Space Grotesk
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-12 py-6 items-start nav-hover group">
+                        <div class="col-span-3 text-[10px] font-mono text-stone-400 uppercase">Body / Light</div>
+                        <div class="col-span-6">
+                            <p
+                                class="text-lg font-sans font-light text-stone-500 leading-relaxed group-hover:text-smile-text transition-colors">
+                                A harmonia visual depende do espaço em branco generoso e da perfeição tipográfica. Foco
+                                absoluto em clareza.</p>
+                        </div>
+                        <div class="col-span-3 text-right text-[10px] font-mono text-stone-400">1.125rem / Inter / 300
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLORS -->
+        <section id="colors" class="py-24 border-t border-stone-200/50 reveal-up">
+            <div class="mb-16">
+                <span class="font-mono text-[10px] uppercase tracking-widest text-smile-purple-main">Pilar 02</span>
+                <h2 class="text-5xl font-display font-medium text-smile-text mt-2">Cores</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                <div
+                    class="col-span-2 glass-panel rounded-3xl p-6 aspect-[2/1] bg-brand-gradient flex flex-col justify-end nav-hover hover:-translate-y-2 transition-transform">
+                    <span class="text-white font-display font-semibold text-2xl">Gradient</span>
+                    <span class="text-[10px] font-mono text-white/70 uppercase">Brand Core</span>
+                </div>
+                <div
+                    class="glass-panel bg-white border border-stone-200 rounded-3xl p-6 aspect-square flex flex-col justify-end nav-hover hover:-translate-y-2 transition-transform">
+                    <span class="text-smile-text font-display font-semibold">White</span>
+                    <span class="text-[10px] font-mono text-stone-400">#FFFFFF / Base</span>
+                </div>
+                <div
+                    class="bg-smile-purple-main text-white rounded-3xl p-6 aspect-square flex flex-col justify-end shadow-xl nav-hover hover:-translate-y-2 transition-transform">
+                    <span class="font-display font-semibold">Purple</span>
+                    <span class="text-[10px] font-mono text-white/70">#5A2C8C / Action</span>
+                </div>
+                <div
+                    class="bg-smile-blue-tech text-white rounded-3xl p-6 aspect-square flex flex-col justify-end shadow-xl nav-hover hover:-translate-y-2 transition-transform">
+                    <span class="font-display font-semibold">Blue</span>
+                    <span class="text-[10px] font-mono text-white/70">#1E5CC6 / Tech</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- UI COMPONENTS & MODALS -->
+        <section id="components" class="py-24 border-t border-stone-200/50 reveal-up">
+            <div class="mb-16">
+                <span class="font-mono text-[10px] uppercase tracking-widest text-smile-purple-main">Pilar 03</span>
+                <h2 class="text-5xl font-display font-medium text-smile-text mt-2">UI Componentes</h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Stack Carousel Card (from glass-effect2) -->
+                <div class="glass-panel rounded-3xl p-10 shadow-xl border border-white/80 h-full flex flex-col">
+                    <h3 class="text-sm font-mono uppercase text-stone-400 mb-8 border-b border-stone-200 pb-2">Stacked
+                        Carousel (Glass Effect)</h3>
+                    <div class="flex-1 flex flex-col items-center justify-center pt-8">
+                        <div class="stack-section h-64 w-64 mx-auto" id="stack-container">
+                            <div class="stack-card s-1 glass-panel bg-white border border-stone-200 p-6 flex flex-col justify-between shadow-2xl nav-hover"
+                                id="card1">
+                                <iconify-icon icon="lucide:droplet"
+                                    class="text-4xl text-smile-blue-tech"></iconify-icon>
+                                <span class="font-display font-semibold text-xl">Liquid Clean</span>
+                            </div>
+                            <div class="stack-card s-2 glass-panel bg-white border border-stone-200 p-6 flex flex-col justify-between shadow-xl nav-hover"
+                                id="card2">
+                                <iconify-icon icon="lucide:layers"
+                                    class="text-4xl text-smile-purple-vivid"></iconify-icon>
+                                <span class="font-display font-semibold text-xl">Glass Layers</span>
+                            </div>
+                            <div class="stack-card s-3 glass-panel bg-white border border-stone-200 p-6 flex flex-col justify-between shadow-lg nav-hover"
+                                id="card3">
+                                <iconify-icon icon="lucide:zap" class="text-4xl text-[#5A2C8C]"></iconify-icon>
+                                <span class="font-display font-semibold text-xl">Performance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modals & Inputs (from glass-pricing) -->
+                <div
+                    class="glass-panel rounded-3xl p-10 shadow-xl border border-white/80 h-full flex flex-col relative overflow-hidden card-content-gradient">
+                    <h3
+                        class="text-sm font-mono uppercase text-stone-400 mb-8 border-b border-stone-200/50 pb-2 relative z-10">
+                        Glass Modal & Inputs</h3>
+
+                    <div
+                        class="bg-white/50 backdrop-blur-md rounded-2xl p-6 border border-white/60 shadow-xl relative z-10 mb-8 nav-hover">
+                        <div class="flex gap-4 items-center border-b border-stone-200/50 pb-4 mb-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-white border border-stone-200 shadow-sm flex items-center justify-center">
+                                <iconify-icon icon="lucide:sparkles"
+                                    class="text-xl text-smile-purple-vivid"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-semibold text-xl">Premium Pass</h4>
+                                <span
+                                    class="text-[10px] font-mono text-smile-purple-main uppercase bg-white px-2 py-0.5 rounded border border-smile-purple-light/30">Active</span>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="input-group">
+                                <input type="text" id="demo-name" placeholder=" " class="nav-hover">
+                                <label for="demo-name" class="font-sans">Digite seu nome</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 relative z-10 mt-auto">
+                        <button
+                            class="nav-hover flex-1 py-4 glass-panel border border-stone-300 rounded-full font-mono text-xs uppercase font-semibold text-stone-500 hover:text-smile-text">Cancelar</button>
+                        <button
+                            class="nav-hover flex-1 py-4 bg-smile-purple-main rounded-full font-mono text-xs uppercase font-semibold text-white shadow-lg shadow-smile-purple-main/30 flex items-center justify-center gap-2 hover:bg-smile-purple-vivid transition-colors">Confirmar
+                            <iconify-icon icon="lucide:check"></iconify-icon></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cards, Badges, Tooltips -->
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+                <!-- Badges -->
+                <div class="glass-panel rounded-3xl p-8 nav-hover border border-white/80">
+                    <h4 class="font-mono text-xs text-stone-400 uppercase mb-4">Badges</h4>
+                    <div class="flex flex-wrap gap-3">
+                        <span
+                            class="bg-smile-successLight/10 text-smile-success px-3 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest font-semibold border border-smile-successLight/30">Sucesso</span>
+                        <span
+                            class="bg-smile-purple-glow/30 text-smile-purple-vivid px-3 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest font-semibold border border-smile-purple-vivid/30">Novo</span>
+                        <span
+                            class="bg-stone-200/50 text-stone-600 px-3 py-1.5 rounded-full text-[10px] font-mono uppercase tracking-widest font-semibold border border-stone-300">Default</span>
+                    </div>
+                </div>
+                <!-- Tooltips -->
+                <div
+                    class="glass-panel rounded-3xl p-8 nav-hover border border-white/80 flex items-center justify-center">
+                    <div class="relative group">
+                        <span
+                            class="text-smile-purple-main border-b border-dashed border-smile-purple-light cursor-pointer font-medium">Passe
+                            o mouse</span>
+                        <div
+                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max px-3 py-2 bg-smile-text text-white text-[10px] font-mono uppercase rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300 pointer-events-none">
+                            Tooltip Animado
+                        </div>
+                    </div>
+                </div>
+                <!-- Navbars style snippet -->
+                <div class="glass-panel rounded-3xl p-8 nav-hover border border-white/80 bg-stone-100/30">
+                    <h4 class="font-mono text-xs text-stone-400 uppercase mb-4">Nav Component</h4>
+                    <div
+                        class="glass-panel rounded-full px-4 py-2 flex items-center justify-between border border-white">
+                        <iconify-icon icon="lucide:box" class="text-smile-purple-main"></iconify-icon>
+                        <div class="flex gap-2">
+                            <div class="w-2 h-2 rounded-full bg-stone-300"></div>
+                            <div class="w-2 h-2 rounded-full bg-stone-300"></div>
+                        </div>
+                        <iconify-icon icon="lucide:menu" class="text-stone-500"></iconify-icon>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ICONS & ANIMATIONS -->
+        <section id="icons" class="py-24 border-t border-stone-200/50 reveal-up">
+            <div class="mb-16">
+                <span class="font-mono text-[10px] uppercase tracking-widest text-smile-purple-main">Pilar 04</span>
+                <h2 class="text-5xl font-display font-medium text-smile-text mt-2">Dinâmica & Ícones</h2>
+            </div>
+
+            <div class="glass-panel rounded-3xl p-10 border border-white/80 shadow-lg">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="nav-hover flex flex-col items-center group">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-white shadow-md border border-stone-200 flex flex-col items-center justify-center mb-4 text-3xl text-smile-purple-main animate-float">
+                            <iconify-icon icon="lucide:rocket"></iconify-icon></div>
+                        <span
+                            class="font-mono text-[10px] uppercase text-stone-500 group-hover:text-smile-purple-main">Float</span>
+                    </div>
+                    <div class="nav-hover flex flex-col items-center group">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-white shadow-md border border-stone-200 flex flex-col items-center justify-center mb-4 text-3xl text-smile-blue-tech animate-pulse-glow">
+                            <iconify-icon icon="lucide:disc"></iconify-icon></div>
+                        <span
+                            class="font-mono text-[10px] uppercase text-stone-500 group-hover:text-smile-purple-main">Pulse
+                            Glow</span>
+                    </div>
+                    <div class="nav-hover flex flex-col items-center group">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-white shadow-md border border-stone-200 flex flex-col items-center justify-center mb-4 text-3xl text-[#5A2C8C] hover:scale-110 transition-transform duration-300">
+                            <iconify-icon icon="lucide:sparkles"></iconify-icon></div>
+                        <span
+                            class="font-mono text-[10px] uppercase text-stone-500 group-hover:text-smile-purple-main">Hover
+                            Scale</span>
+                    </div>
+                    <div class="nav-hover flex flex-col items-center group">
+                        <div
+                            class="w-16 h-16 rounded-full bg-brand-gradient text-white shadow-lg flex flex-col items-center justify-center mb-4 text-3xl hover:rotate-12 transition-transform duration-300">
+                            <iconify-icon icon="lucide:cpu"></iconify-icon></div>
+                        <span
+                            class="font-mono text-[10px] uppercase text-stone-500 group-hover:text-smile-purple-main">Brand
+                            Icon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            const progress = document.getElementById('loader-progress');
+            progress.style.width = '100%';
+            setTimeout(() => {
+                document.getElementById('preloader').classList.add('loaded');
+                document.body.classList.add('hero-revealed');
+                setTimeout(() => { document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('active')); }, 500);
+            }, 600);
+        });
+
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+        document.querySelectorAll('.nav-hover, button, input').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+
+        // Intersection Observer for Scroll Reveals
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal-up, .split-line').forEach(el => observer.observe(el));
+
+        // Stacked Carousel Loop
+        const cards = [document.getElementById('card1'), document.getElementById('card2'), document.getElementById('card3')];
+        let currentStatus = [1, 2, 3];
+        setInterval(() => {
+            // shift statuses
+            currentStatus.unshift(currentStatus.pop());
+            cards.forEach((c, i) => {
+                c.className = `stack-card s-${currentStatus[i]} glass-panel bg-white border border-stone-200 p-6 flex flex-col justify-between shadow-2xl nav-hover`;
+            });
+        }, 2500);
+    </script>
+</body>
+
+</html>
