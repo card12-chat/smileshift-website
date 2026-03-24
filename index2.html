@@ -66,8 +66,13 @@
                     animation: {
                         'pulse-glow': 'pulseGlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                         'scroll-line': 'scrollLine 2s cubic-bezier(0.4, 0, 0.2, 1) infinite',
+                        'float': 'floatImage 6s ease-in-out infinite',
                     },
                     keyframes: {
+                        floatImage: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-15px)' },
+                        },
                         pulseGlow: {
                             '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
                             '50%': { opacity: '0.8', transform: 'scale(1.05)' },
@@ -658,6 +663,107 @@
         </div>
     </section>
 
+    <!-- Fourth Fold: Technology (V34) -->
+    <section id="fourth-fold" class="relative w-full bg-white pt-24 pb-32 lg:py-40 overflow-hidden z-20">
+
+        <div class="max-w-[1440px] w-full mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+
+                <!-- Web: Text Left | Mobile: Text Second -->
+                <div class="lg:col-span-6 flex flex-col justify-center order-2 lg:order-1">
+
+                    <div class="anim-4-tag inline-flex items-center gap-2 mb-6 opacity-0 translate-y-6">
+                        <span
+                            class="w-1.5 h-1.5 bg-smile-blue-tech rounded-full shadow-[0_0_8px_#1E5CC6] animate-pulse"></span>
+                        <span
+                            class="text-[10px] font-mono uppercase tracking-[0.2em] text-smile-blue-tech font-semibold bg-[#1E5CC6]/5 backdrop-blur-md px-3 py-1.5 rounded-full border border-smile-blue-tech/10 shadow-sm">TECNOLOGIA
+                            V34</span>
+                    </div>
+
+                    <h2
+                        class="anim-4-title font-display text-4xl md:text-5xl lg:text-[4.5rem] font-bold tracking-tighter text-smile-text leading-[1.05] mb-6 opacity-0 translate-y-6">
+                        Resultados visíveis em <span
+                            class="text-transparent bg-clip-text bg-brand-gradient">minutos.</span>
+                    </h2>
+
+                    <p
+                        class="anim-4-sub text-lg md:text-xl text-stone-500 leading-relaxed font-light mb-12 opacity-0 translate-y-6">
+                        Desenvolvido para melhorar visualmente o tom dos dentes,
+                        reduzindo o amarelado e deixando o sorriso mais claro em <strong
+                            class="text-smile-purple-vivid font-bold drop-shadow-[0_0_12px_rgba(123,63,199,0.4)]">apenas
+                            30 minutos</strong>.
+                    </p>
+
+                    <!-- Tech Blocks -->
+                    <div class="flex flex-col gap-8 mb-12 border-l-2 border-smile-purple-main/10 pl-6 md:pl-8">
+
+                        <!-- Block 1 -->
+                        <div class="anim-4-block opacity-0 translate-y-6 flex flex-col gap-2">
+                            <div class="flex items-center gap-3 text-smile-purple-vivid">
+                                <iconify-icon icon="lucide:droplets" class="text-xl"></iconify-icon>
+                                <h4 class="font-sans text-lg font-semibold text-smile-text tracking-tight">Neutraliza o
+                                    amarelado</h4>
+                            </div>
+                            <p class="text-stone-500 font-light leading-relaxed">
+                                Reduz visualmente manchas causadas por café, vinho e hábitos do dia a dia.
+                            </p>
+                        </div>
+
+                        <!-- Block 2 -->
+                        <div class="anim-4-block opacity-0 translate-y-6 flex flex-col gap-2">
+                            <div class="flex items-center gap-3 text-smile-purple-vivid">
+                                <iconify-icon icon="lucide:sun" class="text-xl"></iconify-icon>
+                                <h4 class="font-sans text-lg font-semibold text-smile-text tracking-tight">Realça a
+                                    luminosidade</h4>
+                            </div>
+                            <p class="text-stone-500 font-light leading-relaxed">
+                                Deixa o sorriso mais claro, uniforme e com aparência mais saudável.
+                            </p>
+                        </div>
+
+                        <!-- Block 3 -->
+                        <div class="anim-4-block opacity-0 translate-y-6 flex flex-col gap-2">
+                            <div class="flex items-center gap-3 text-smile-purple-vivid">
+                                <iconify-icon icon="lucide:shield-check" class="text-xl"></iconify-icon>
+                                <h4 class="font-sans text-lg font-semibold text-smile-text tracking-tight">Aplicação
+                                    simples e confortável</h4>
+                            </div>
+                            <p class="text-stone-500 font-light leading-relaxed">
+                                Use em casa, sem complicação e sem sensação agressiva.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Final Impact Phrase -->
+                    <div class="anim-4-final opacity-0 translate-y-6 mt-4">
+                        <h3 class="font-display text-2xl md:text-3xl font-bold tracking-tight text-smile-text">
+                            Menos tempo. <span class="text-smile-purple-vivid">Mais confiança no seu sorriso.</span>
+                        </h3>
+                    </div>
+
+                </div>
+
+                <!-- Mobile: Image First | Desktop: Image Right -->
+                <div class="lg:col-span-6 relative order-1 lg:order-2 flex justify-center items-center">
+
+                    <!-- Decorative glowing blob behind image -->
+                    <div
+                        class="absolute inset-0 bg-smile-purple-light/40 blur-[140px] scale-110 mix-blend-multiply opacity-20 md:opacity-30 z-0 rounded-full animate-pulse-glow">
+                    </div>
+
+                    <!-- Floating Image Wrapper -->
+                    <div
+                        class="anim-4-image relative w-full flex items-center justify-center max-w-[400px] lg:max-w-[550px] aspect-[4/5] md:aspect-square z-10 opacity-0 scale-95">
+                        <img src="raw_files/3omin-1.jpg" alt="Tecnologia SmileShift"
+                            class="w-full h-full object-cover rounded-[2.5rem] lg:rounded-[3rem] filter drop-shadow-[0_45px_65px_rgba(90,44,140,0.2)] animate-float scale-105" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Script Execution -->
     <script>
         // Initialize Lucide Icons
@@ -790,6 +896,25 @@
                 .to('.anim-3-title', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.6")
                 .to('.anim-3-sub', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.8")
                 .to('.anim-3-benefit', { y: 0, opacity: 1, duration: 0.7, ease: "power2.out", stagger: 0.15 }, "-=0.5");
+        });
+
+        // 7. Cinematic Entrance for Fourth Fold
+        window.addEventListener('DOMContentLoaded', () => {
+            const tl4 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#fourth-fold",
+                    start: "top 65%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Sequence: Image -> Tag -> Title -> Subhead -> Blocks -> Final
+            tl4.to('.anim-4-image', { scale: 1, opacity: 1, duration: 1.2, ease: "power2.out" })
+                .to('.anim-4-tag', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.8")
+                .to('.anim-4-title', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.6")
+                .to('.anim-4-sub', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.7")
+                .to('.anim-4-block', { y: 0, opacity: 1, duration: 0.7, ease: "power2.out", stagger: 0.15 }, "-=0.5")
+                .to('.anim-4-final', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.3");
         });
 
     </script>
