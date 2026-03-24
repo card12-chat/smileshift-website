@@ -13,8 +13,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Tailwind CSS with specific configuration from design_system15 -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -83,6 +87,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Custom CSS (extracted from design system) -->
     <style>
@@ -500,17 +505,155 @@
 
                 </div>
             </div>
+
+            <!-- Scroll Indicator anchored to content end -->
+            <div class="w-full flex justify-center mt-16 md:mt-24 mb-4">
+                <a href="#third-fold" aria-label="Role para descobrir mais"
+                    class="flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-500 group cursor-pointer reveal-up delay-500">
+                    <span
+                        class="text-[0.6rem] font-mono uppercase tracking-[0.3em] text-smile-purple-main font-bold">Descubra</span>
+                    <div class="w-[1px] h-12 bg-black/10 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-1/2 bg-smile-purple-vivid animate-scroll-line"></div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Third Fold: Visual Proof (Before & After Stacked Carousel) -->
+    <section id="third-fold"
+        class="relative w-full bg-gradient-to-b from-white to-[#FAFAFA] py-32 lg:py-40 overflow-hidden z-20">
+        <!-- Floating Blobs for Depth (from design_system16) -->
+        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-30 mix-blend-multiply">
+            <div
+                class="absolute rounded-full filter blur-[100px] bg-smile-purple-light/40 w-[600px] h-[600px] -top-[10%] -left-[10%] animate-[float_15s_ease-in-out_infinite_alternate]">
+            </div>
+            <div
+                class="absolute rounded-full filter blur-[100px] bg-smile-blue-tech/20 w-[500px] h-[500px] bottom-[10%] -right-[5%] animate-[float_12s_ease-in-out_infinite_alternate_reverse]">
+            </div>
         </div>
 
-        <!-- Subtle Scroll Indicator for the Third Fold -->
-        <a href="#third-fold" aria-label="Role para descobrir mais"
-            class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 hover:opacity-100 transition-opacity duration-500 z-30 group cursor-pointer reveal-up delay-500">
-            <span
-                class="text-[0.6rem] font-mono uppercase tracking-[0.3em] text-smile-purple-main font-bold">Descubra</span>
-            <div class="w-[1px] h-12 bg-black/10 relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1/2 bg-smile-purple-vivid animate-scroll-line"></div>
+        <div class="max-w-[1440px] w-full mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+
+                <!-- Left: Copy & Desire -->
+                <div class="lg:col-span-5 flex flex-col justify-center order-2 lg:order-1">
+
+                    <div class="inline-flex items-center gap-2 mb-6 reveal-up">
+                        <span
+                            class="w-1.5 h-1.5 bg-smile-purple-vivid rounded-full shadow-[0_0_8px_#7B3FC7] animate-pulse"></span>
+                        <span
+                            class="text-[10px] font-mono uppercase tracking-[0.2em] text-smile-purple-main font-semibold bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-smile-purple-light/20 shadow-sm">Resultados
+                            Visíveis</span>
+                    </div>
+
+                    <h2
+                        class="font-display text-4xl md:text-5xl lg:text-[4.5rem] font-bold tracking-tighter text-smile-text leading-[1.05] mb-6 reveal-up delay-100">
+                        Veja a <span class="text-smile-purple-main">diferença</span> no seu sorriso.
+                    </h2>
+
+                    <p class="text-lg md:text-xl text-stone-500 leading-relaxed font-light mb-10 reveal-up delay-200">
+                        Resultados visíveis em minutos, sem dor e sem procedimentos clínicos.
+                    </p>
+
+                    <!-- Micro Prova -->
+                    <div class="flex flex-col gap-4 reveal-up delay-300">
+                        <div
+                            class="flex items-center gap-4 bg-white/70 backdrop-blur-md border border-white p-4 rounded-2xl shadow-sm transition-transform hover:-translate-y-1 group cursor-default">
+                            <div
+                                class="w-10 h-10 rounded-full bg-smile-bg flex items-center justify-center shrink-0 border border-stone-100 group-hover:border-smile-purple-main/20 transition-colors">
+                                <iconify-icon icon="lucide:check-circle-2"
+                                    class="text-smile-purple-vivid text-lg"></iconify-icon>
+                            </div>
+                            <span class="font-sans text-sm font-medium text-stone-600">Resultado desde o primeiro
+                                uso</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 bg-white/70 backdrop-blur-md border border-white p-4 rounded-2xl shadow-sm transition-transform hover:-translate-y-1 group cursor-default">
+                            <div
+                                class="w-10 h-10 rounded-full bg-smile-bg flex items-center justify-center shrink-0 border border-stone-100 group-hover:border-smile-purple-main/20 transition-colors">
+                                <iconify-icon icon="lucide:sparkles"
+                                    class="text-smile-purple-vivid text-lg"></iconify-icon>
+                            </div>
+                            <span class="font-sans text-sm font-medium text-stone-600">Aparência mais branca e
+                                uniforme</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 bg-white/70 backdrop-blur-md border border-white p-4 rounded-2xl shadow-sm transition-transform hover:-translate-y-1 group cursor-default">
+                            <div
+                                class="w-10 h-10 rounded-full bg-smile-bg flex items-center justify-center shrink-0 border border-stone-100 group-hover:border-smile-purple-main/20 transition-colors">
+                                <iconify-icon icon="lucide:home" class="text-smile-purple-vivid text-lg"></iconify-icon>
+                            </div>
+                            <span class="font-sans text-sm font-medium text-stone-600">Aplicação simples em casa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Stacked Glass Carousel (SwiperJS) -->
+                <div
+                    class="lg:col-span-7 relative order-1 lg:order-2 flex justify-center items-center reveal-up delay-300">
+
+                    <!-- Decorative glowing aura behind carousel -->
+                    <div
+                        class="absolute inset-0 bg-brand-gradient opacity-[0.05] blur-[80px] rounded-full scale-75 animate-pulse-glow z-0">
+                    </div>
+
+                    <!-- Swiper Container -->
+                    <div class="swiper swiper-stacked-cards w-full max-w-[360px] md:max-w-[420px] aspect-[4/5] relative z-10"
+                        style="perspective: 1000px;">
+                        <div class="swiper-wrapper">
+
+                            <!-- Slide 1 -->
+                            <div
+                                class="swiper-slide bg-white/40 backdrop-blur-2xl border border-white shadow-[0_30px_60px_-15px_rgba(90,44,140,0.15)] rounded-3xl overflow-hidden glass-panel group cursor-grab active:cursor-grabbing p-2">
+                                <div class="w-full h-full relative overflow-hidden rounded-2xl bg-stone-100">
+                                    <img src="raw_files/Antes e depois/1.png" alt="Antes"
+                                        class="absolute inset-0 w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div
+                                class="swiper-slide bg-white/40 backdrop-blur-2xl border border-white shadow-[0_30px_60px_-15px_rgba(90,44,140,0.15)] rounded-3xl overflow-hidden glass-panel group cursor-grab active:cursor-grabbing p-2">
+                                <div class="w-full h-full relative overflow-hidden rounded-2xl bg-stone-100">
+                                    <img src="raw_files/Antes e depois/2.png" alt="Depois"
+                                        class="absolute inset-0 w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div
+                                class="swiper-slide bg-white/40 backdrop-blur-2xl border border-white shadow-[0_30px_60px_-15px_rgba(90,44,140,0.15)] rounded-3xl overflow-hidden glass-panel group cursor-grab active:cursor-grabbing p-2">
+                                <div class="w-full h-full relative overflow-hidden rounded-2xl bg-stone-100">
+                                    <img src="raw_files/Antes e depois/3.png" alt="Antes"
+                                        class="absolute inset-0 w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                            <!-- Slide 4 -->
+                            <div
+                                class="swiper-slide bg-white/40 backdrop-blur-2xl border border-white shadow-[0_30px_60px_-15px_rgba(90,44,140,0.15)] rounded-3xl overflow-hidden glass-panel group cursor-grab active:cursor-grabbing p-2">
+                                <div class="w-full h-full relative overflow-hidden rounded-2xl bg-stone-100">
+                                    <img src="raw_files/Antes e depois/4.png" alt="Depois"
+                                        class="absolute inset-0 w-full h-full object-cover" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Swipe hint indicator below the carousel to encourage interaction -->
+                    <div
+                        class="absolute -bottom-16 left-1/2 -translate-x-1/2 flex items-center gap-3 opacity-40 font-mono text-[10px] uppercase tracking-widest pointer-events-none">
+                        <iconify-icon icon="lucide:move-horizontal" class="text-sm"></iconify-icon>
+                        <span>Swipe</span>
+                    </div>
+
+                </div>
+
             </div>
-        </a>
+        </div>
     </section>
 
     <!-- Script Execution -->
@@ -611,6 +754,21 @@
                 y: -40,
                 filter: "blur(15px)",
                 ease: "none"
+            });
+        });
+
+        // 5. Initialize SwiperJS for Third Fold Visual Proof
+        window.addEventListener('DOMContentLoaded', () => {
+            const swiper = new Swiper('.swiper-stacked-cards', {
+                effect: 'cards',
+                grabCursor: true,
+                cardsEffect: {
+                    slideShadows: false, // Custom CSS shadows are used instead
+                    perSlideOffset: 12, // Apple-style subtle depth
+                    perSlideRotate: 2, // Very slight rotation for realism
+                },
+                resistanceRatio: 0.6, // Bouncy feel when dragged past limit
+                speed: 600, // Buttery smooth transitions
             });
         });
 
