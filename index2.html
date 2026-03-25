@@ -118,6 +118,65 @@
             color: transparent;
         }
 
+        /* Stacked Carousel (Glass Effect) */
+        .stack-section {
+            position: relative;
+            width: 100%;
+            perspective: 1000px;
+        }
+
+        .t-stack-card {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-style: preserve-3d;
+            border-radius: 1.5rem;
+        }
+
+        .s-1 {
+            transform: translateY(0) scale(1);
+            z-index: 6;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .s-2 {
+            transform: translateY(20px) scale(0.95);
+            z-index: 5;
+            opacity: 0.8;
+            pointer-events: none;
+        }
+
+        .s-3 {
+            transform: translateY(40px) scale(0.9);
+            z-index: 4;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .s-4 {
+            transform: translateY(60px) scale(0.85);
+            z-index: 3;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .s-5 {
+            transform: translateY(80px) scale(0.8);
+            z-index: 2;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .s-6 {
+            transform: translateY(100px) scale(0.75);
+            z-index: 1;
+            opacity: 0;
+            pointer-events: none;
+        }
+
         /* Video Area specific */
         .video-container {
             position: relative;
@@ -764,6 +823,560 @@
         </div>
     </section>
 
+    <!-- Fifth Fold: Pricing / Offers (Combos) -->
+    <section id="fifth-fold" class="relative w-full bg-[#FAFAFA] pt-24 pb-32 md:pt-32 lg:py-48 overflow-hidden z-20">
+
+        <!-- Subtle Glow Background -->
+        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden flex justify-center items-center">
+            <div
+                class="w-[800px] h-[800px] bg-smile-purple-light/20 rounded-full blur-[150px] opacity-50 mix-blend-multiply">
+            </div>
+        </div>
+
+        <div class="max-w-[1280px] w-full mx-auto px-6 md:px-12 relative z-10">
+
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 md:mb-24 flex flex-col items-center">
+                <div class="anim-5-tag inline-flex items-center gap-2 mb-6 opacity-0 translate-y-6">
+                    <span
+                        class="w-1.5 h-1.5 bg-smile-purple-vivid rounded-full shadow-[0_0_8px_#7B3FC7] animate-pulse"></span>
+                    <span
+                        class="text-[10px] font-mono uppercase tracking-[0.2em] text-smile-purple-main font-semibold bg-smile-purple-main/5 backdrop-blur-md px-3 py-1.5 rounded-full border border-smile-purple-main/20 shadow-sm">ESCOLHA
+                        SEU COMBO</span>
+                </div>
+
+                <h2
+                    class="anim-5-title font-display text-4xl md:text-5xl lg:text-[4.5rem] font-bold tracking-tighter text-smile-text leading-[1.05] mb-6 opacity-0 translate-y-6">
+                    Escolha quanto você quer <span
+                        class="text-transparent bg-clip-text bg-brand-gradient">transformar</span> seu sorriso.
+                </h2>
+
+                <p
+                    class="anim-5-sub text-lg md:text-xl text-stone-500 leading-relaxed font-light opacity-0 translate-y-6">
+                    Quanto mais consistente o uso, maior a percepção de resultado e melhor o custo-benefício.
+                </p>
+            </div>
+
+            <!-- Pricing Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-center max-w-5xl mx-auto">
+
+                <!-- Card 1: 1 Box -->
+                <div
+                    class="anim-5-card order-2 md:order-1 glass-panel p-8 rounded-[2rem] flex flex-col items-center text-center relative overflow-hidden opacity-0 translate-y-6 hover:-translate-y-2 hover:scale-[1.01] hover:shadow-[0_15px_30px_rgba(90,44,140,0.05)] hover:bg-white/60 transition-all duration-500 cursor-default group border border-stone-200/80 hover:border-smile-purple-main/20">
+                    <div class="mb-4">
+                        <h4 class="text-2xl font-display font-bold text-smile-text mb-1">1 Caixa</h4>
+                        <span class="text-sm font-medium text-stone-400">Ideal para testar</span>
+                    </div>
+
+                    <div class="flex items-end justify-center gap-2 mb-8 mt-2">
+                        <span class="text-4xl font-display font-bold text-smile-text">R$59,90</span>
+                    </div>
+
+                    <ul class="flex flex-col gap-3 w-full mb-8">
+                        <li class="flex items-center justify-center gap-2 text-sm text-stone-600 font-medium">
+                            <iconify-icon icon="lucide:check" class="text-smile-purple-main"></iconify-icon>
+                            14 tiras
+                        </li>
+                        <li class="flex items-center justify-center gap-2 text-sm text-stone-500">
+                            Uso inicial
+                        </li>
+                    </ul>
+
+                    <button
+                        class="w-full py-4 rounded-xl border border-smile-purple-main/20 bg-smile-purple-main text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#22C55E] hover:border-[#22C55E] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 transform active:scale-95 mt-auto md:mt-6 overflow-hidden relative group/btn">
+                        <span class="relative z-10">Escolher combo</span>
+                    </button>
+                </div>
+
+                <!-- Card 2: 3 Boxes (HIGHLIGHT) -->
+                <div
+                    class="anim-5-card-main order-1 md:order-2 glass-panel p-10 rounded-[2.5rem] flex flex-col items-center text-center relative overflow-hidden opacity-0 scale-95 shadow-[0_20px_40px_rgba(90,44,140,0.15)] md:scale-[1.05] z-20 border-2 border-smile-purple-main/40 hover:-translate-y-3 hover:scale-[1.06] hover:shadow-[0_30px_60px_rgba(90,44,140,0.25)] hover:bg-white/70 transition-all duration-500 cursor-default group">
+
+                    <!-- Shimmer effect -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[1500ms] ease-in-out z-0 pointer-events-none">
+                    </div>
+
+                    <!-- Highlight Badge -->
+                    <div class="absolute top-0 inset-x-0 flex justify-center -translate-y-[1px]">
+                        <div
+                            class="bg-brand-gradient text-white text-[10px] uppercase font-bold tracking-widest py-1.5 px-6 rounded-b-xl shadow-md">
+                            Mais vendido
+                        </div>
+                    </div>
+
+                    <!-- Inner Glow -->
+                    <div
+                        class="absolute inset-0 bg-smile-purple-main/5 pointer-events-none z-0 group-hover:bg-smile-purple-main/10 transition-colors duration-500">
+                    </div>
+
+                    <div class="relative z-10 flex flex-col items-center w-full">
+                        <div class="mt-4 mb-4">
+                            <h4
+                                class="text-3xl font-display font-bold text-smile-purple-vivid mb-2 drop-shadow-sm group-hover:animate-pulse">
+                                3
+                                Caixas</h4>
+                            <span class="text-sm font-medium text-stone-500">Recomendado para melhores resultados</span>
+                        </div>
+
+                        <div class="flex items-end justify-center gap-3 mb-2 mt-4 relative">
+                            <span
+                                class="text-5xl font-display font-bold text-transparent bg-clip-text bg-brand-gradient">R$129,70</span>
+                        </div>
+                        <div class="text-sm font-medium text-stone-400 line-through mb-4">R$179,70</div>
+
+                        <div
+                            class="bg-white/80 backdrop-blur-md rounded-lg py-2 px-4 mb-8 border border-white/50 shadow-sm w-full group-hover:border-smile-purple-main/30 group-hover:shadow-[0_0_15px_rgba(123,63,199,0.1)] transition-all duration-500">
+                            <span class="text-xs font-bold text-smile-purple-main">R$ 43,23 por caixa</span>
+                        </div>
+
+                        <ul class="flex flex-col gap-4 w-full mb-10">
+                            <li
+                                class="flex items-center justify-center gap-2 text-sm text-stone-700 font-bold group-hover:text-smile-purple-vivid transition-colors duration-300">
+                                <iconify-icon icon="lucide:star" class="text-smile-purple-vivid"></iconify-icon>
+                                Melhor custo-benefício
+                            </li>
+                            <li class="flex items-center justify-center gap-2 text-sm text-stone-600 font-medium">
+                                <iconify-icon icon="lucide:check" class="text-smile-purple-main"></iconify-icon>
+                                42 tiras no total
+                            </li>
+                        </ul>
+
+                        <button
+                            class="w-full p-[2px] rounded-xl mt-auto relative overflow-hidden group/beam shadow-lg shadow-smile-purple-main/30 hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all duration-500 transform active:scale-95 bg-[#3B195E] border border-[#3B195E] hover:bg-[#22C55E] hover:border-[#22C55E]">
+
+                            <!-- Animated border slide effect (visible on Base) -->
+                            <div
+                                class="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_70%,#d8b4fe_100%)] animate-[spin_2s_linear_infinite] opacity-100 group-hover/beam:opacity-0 transition-opacity duration-300 pointer-events-none">
+                            </div>
+
+                            <!-- Button Inner -->
+                            <div
+                                class="w-full h-full bg-smile-purple-main group-hover/beam:bg-[#22C55E] rounded-[10px] relative z-10 py-[14px] flex items-center justify-center transition-colors duration-500 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
+                                <span
+                                    class="relative z-10 flex items-center justify-center gap-2 font-mono text-[13px] font-bold uppercase tracking-widest text-white">
+                                    Quero este combo
+                                    <iconify-icon icon="lucide:arrow-right"
+                                        class="text-lg group-hover/beam:translate-x-1 transition-transform"></iconify-icon>
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3: 5 Boxes -->
+                <div
+                    class="anim-5-card order-3 glass-panel p-8 rounded-[2rem] flex flex-col items-center text-center relative overflow-hidden opacity-0 translate-y-6 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(90,44,140,0.1)] hover:bg-white/60 transition-all duration-500 cursor-default group border border-stone-200/80 hover:border-smile-blue-tech/20">
+                    <div class="mb-4">
+                        <h4 class="text-2xl font-display font-bold text-smile-text mb-1">5 Caixas</h4>
+                        <span class="text-sm font-medium text-stone-400">Maior economia por caixa</span>
+                    </div>
+
+                    <div class="flex items-end justify-center gap-2 mb-2 mt-4">
+                        <span class="text-4xl font-display font-bold text-smile-text">R$159,70</span>
+                    </div>
+                    <div class="text-sm font-medium text-stone-400 line-through mb-4">R$299,50</div>
+
+                    <div
+                        class="bg-stone-100/50 rounded-lg py-1.5 px-3 mb-8 w-full border border-stone-200/50 group-hover:border-smile-blue-tech/30 transition-colors duration-500">
+                        <span class="text-xs font-semibold text-stone-600">R$ 31,94 por caixa</span>
+                    </div>
+
+                    <ul class="flex flex-col gap-3 w-full mb-8">
+                        <li class="flex items-center justify-center gap-2 text-sm text-smile-blue-tech font-bold">
+                            <iconify-icon icon="lucide:trending-down" class="text-smile-blue-tech"></iconify-icon>
+                            Maior economia global
+                        </li>
+                        <li class="flex items-center justify-center gap-2 text-sm text-stone-600">
+                            <iconify-icon icon="lucide:check"
+                                class="text-stone-400 group-hover:text-smile-blue-tech transition-colors duration-300"></iconify-icon>
+                            70 tiras totais
+                        </li>
+                    </ul>
+
+                    <button
+                        class="w-full py-4 rounded-xl border border-smile-purple-main/20 bg-smile-purple-main text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#22C55E] hover:border-[#22C55E] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 transform active:scale-95 mt-auto md:mt-2 relative overflow-hidden group/btn">
+                        <span class="relative z-10">Escolher combo</span>
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Trust Elements Below -->
+            <div
+                class="anim-5-trust opacity-0 translate-y-6 flex flex-wrap justify-center items-center gap-6 md:gap-12 mt-16 text-sm font-medium text-stone-500">
+                <div class="flex items-center gap-2">
+                    <iconify-icon icon="lucide:shield-check" class="text-smile-purple-main text-lg"></iconify-icon>
+                    Sem dor
+                </div>
+                <div class="flex items-center gap-2">
+                    <iconify-icon icon="lucide:shield-check" class="text-smile-purple-main text-lg"></iconify-icon>
+                    Sem sensibilidade
+                </div>
+                <div class="flex items-center gap-2">
+                    <iconify-icon icon="lucide:check-circle-2" class="text-smile-purple-main text-lg"></iconify-icon>
+                    Sem clínica
+                </div>
+                <div class="flex items-center gap-2">
+                    <iconify-icon icon="lucide:home" class="text-smile-purple-main text-lg"></iconify-icon>
+                    Aplicação simples em casa
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sixth Fold: Social Proof + FAQ -->
+    <section id="sixth-fold" class="relative w-full bg-white pt-24 pb-32 md:py-32 overflow-hidden z-20">
+        <!-- Background Blur/Glow for FAQ section -->
+        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden flex justify-end items-end">
+            <div
+                class="w-[600px] h-[600px] bg-smile-blue-tech/10 rounded-full blur-[120px] opacity-60 translate-x-1/4 translate-y-1/4">
+            </div>
+        </div>
+
+        <div class="max-w-[1280px] w-full mx-auto px-6 md:px-12 relative z-10">
+
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+
+                <!-- Left: Social Proof Stacked Carousel -->
+                <div class="flex flex-col relative w-full text-left">
+                    <div class="anim-6-tag inline-flex items-center gap-2 mb-6 opacity-0 translate-y-6">
+                        <span
+                            class="w-1.5 h-1.5 bg-smile-purple-vivid rounded-full shadow-[0_0_8px_#7B3FC7] animate-pulse"></span>
+                        <span
+                            class="text-[10px] font-mono uppercase tracking-[0.2em] text-smile-purple-main font-semibold bg-smile-purple-main/5 backdrop-blur-md px-3 py-1.5 rounded-full border border-smile-purple-main/20 shadow-sm">EXPERIÊNCIAS
+                            REAIS</span>
+                    </div>
+
+                    <h2
+                        class="anim-6-title font-display text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tighter text-smile-text mb-6 opacity-0 translate-y-6 leading-[1.1]">
+                        Quem usa, percebe a <span
+                            class="text-transparent bg-clip-text bg-brand-gradient">diferença</span>.
+                    </h2>
+
+                    <p
+                        class="anim-6-sub text-lg text-stone-500 leading-relaxed font-light mb-12 opacity-0 translate-y-6 max-w-md">
+                        Resultados percebidos por pessoas que buscavam um sorriso mais branco de forma prática, rápida e
+                        confortável.
+                    </p>
+
+                    <!-- Stack Carousel container from design system -->
+                    <div class="stack-section h-[340px] md:h-[280px] w-full max-w-[400px] anim-6-carousel opacity-0 scale-95 origin-left"
+                        id="testimonial-stack">
+
+                        <div class="t-stack-card s-1 glass-panel bg-white border border-stone-200/80 p-8 flex flex-col justify-between shadow-2xl cursor-default group"
+                            id="t-card-1">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-4">
+                                    <img src="/Users/vitorcardoso/.gemini/antigravity/brain/a7c7f1c8-6417-4262-a2b6-ca041d19bf55/portrait_1_1774391046178.png"
+                                        class="w-12 h-12 rounded-full object-cover shadow-md bg-stone-100 border border-stone-200"
+                                        alt="Avatar">
+                                    <div>
+                                        <h4 class="font-display font-bold text-smile-text leading-tight">Mariana S.</h4>
+                                        <span class="text-[10px] font-mono uppercase text-stone-400">São Paulo,
+                                            SP</span>
+                                    </div>
+                                </div>
+                                <div class="flex text-smile-purple-vivid gap-0.5 text-sm drop-shadow-sm">
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 font-sans leading-relaxed text-[15px] font-medium">"Usei antes de
+                                sair e já percebi diferença. O que mais me surpreendeu foi a praticidade, não precisei
+                                de goteiras chatas."</p>
+                        </div>
+
+                        <div class="t-stack-card s-2 glass-panel bg-white border border-stone-200/80 p-8 flex flex-col justify-between shadow-2xl cursor-default group"
+                            id="t-card-2">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-4">
+                                    <img src="/Users/vitorcardoso/.gemini/antigravity/brain/a7c7f1c8-6417-4262-a2b6-ca041d19bf55/portrait_2_1774391062016.png"
+                                        class="w-12 h-12 rounded-full object-cover shadow-md bg-stone-100 border border-stone-200"
+                                        alt="Avatar">
+                                    <div>
+                                        <h4 class="font-display font-bold text-smile-text leading-tight">Thiago M.</h4>
+                                        <span class="text-[10px] font-mono uppercase text-stone-400">Curitiba, PR</span>
+                                    </div>
+                                </div>
+                                <div class="flex text-smile-purple-vivid gap-0.5 text-sm drop-shadow-sm">
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 font-sans leading-relaxed text-[15px] font-medium">"Gostei muito
+                                porque foi mega rápido e não senti absolutamente nenhum desconforto ou sensibilidade."
+                            </p>
+                        </div>
+
+                        <div class="t-stack-card s-3 glass-panel bg-white border border-stone-200/80 p-8 flex flex-col justify-between shadow-2xl cursor-default group"
+                            id="t-card-3">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-4">
+                                    <img src="/Users/vitorcardoso/.gemini/antigravity/brain/a7c7f1c8-6417-4262-a2b6-ca041d19bf55/portrait_3_1774391020979.png"
+                                        class="w-12 h-12 rounded-full object-cover shadow-md bg-stone-100 border border-stone-200"
+                                        alt="Avatar">
+                                    <div>
+                                        <h4 class="font-display font-bold text-smile-text leading-tight">Carolina T.
+                                        </h4>
+                                        <span class="text-[10px] font-mono uppercase text-stone-400">Belo Horizonte,
+                                            MG</span>
+                                    </div>
+                                </div>
+                                <div class="flex text-smile-purple-vivid gap-0.5 text-sm drop-shadow-sm">
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 font-sans leading-relaxed text-[15px] font-medium">"Muito mais
+                                prático do que eu imaginava. Perfeito para usar antes de fotos e eventos importantes."
+                            </p>
+                        </div>
+
+                        <div class="t-stack-card s-4 glass-panel bg-white border border-stone-200/80 p-8 flex flex-col justify-between shadow-2xl cursor-default group"
+                            id="t-card-4">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-4">
+                                    <img src="/Users/vitorcardoso/.gemini/antigravity/brain/a7c7f1c8-6417-4262-a2b6-ca041d19bf55/portrait_4_1774391160961.png"
+                                        class="w-12 h-12 rounded-full object-cover shadow-md bg-stone-100 border border-stone-200"
+                                        alt="Avatar">
+                                    <div>
+                                        <h4 class="font-display font-bold text-smile-text leading-tight">Lucas V.</h4>
+                                        <span class="text-[10px] font-mono uppercase text-stone-400">Rio de Janeiro,
+                                            RJ</span>
+                                    </div>
+                                </div>
+                                <div class="flex text-smile-purple-vivid gap-0.5 text-sm drop-shadow-sm">
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star"
+                                        class="fill-current text-smile-purple-light"></iconify-icon>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 font-sans leading-relaxed text-[15px] font-medium">"Achei muito
+                                fácil de usar e meu sorriso ficou incrivelmente mais uniforme. As manchas de café
+                                sumiram."</p>
+                        </div>
+
+                        <div class="t-stack-card s-5 glass-panel bg-white border border-stone-200/80 p-8 flex flex-col justify-between shadow-2xl cursor-default group"
+                            id="t-card-5">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-4">
+                                    <img src="/Users/vitorcardoso/.gemini/antigravity/brain/a7c7f1c8-6417-4262-a2b6-ca041d19bf55/portrait_5_1774391093996.png"
+                                        class="w-12 h-12 rounded-full object-cover shadow-md bg-stone-100 border border-stone-200"
+                                        alt="Avatar">
+                                    <div>
+                                        <h4 class="font-display font-bold text-smile-text leading-tight">Fernanda R.
+                                        </h4>
+                                        <span class="text-[10px] font-mono uppercase text-stone-400">Campinas, SP</span>
+                                    </div>
+                                </div>
+                                <div class="flex text-smile-purple-vivid gap-0.5 text-sm drop-shadow-sm">
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 font-sans leading-relaxed text-[15px] font-medium">"Uso toda semana
+                                religiosamente. Ninguém acredita que fiz em casa porque o resultado sempre fica muito
+                                natural."</p>
+                        </div>
+
+                        <div class="t-stack-card s-6 glass-panel bg-white border border-stone-200/80 p-8 flex flex-col justify-between shadow-2xl cursor-default group"
+                            id="t-card-6">
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="flex items-center gap-4">
+                                    <img src="/Users/vitorcardoso/.gemini/antigravity/brain/a7c7f1c8-6417-4262-a2b6-ca041d19bf55/portrait_6_1774391108940.png"
+                                        class="w-12 h-12 rounded-full object-cover shadow-md bg-stone-100 border border-stone-200"
+                                        alt="Avatar">
+                                    <div>
+                                        <h4 class="font-display font-bold text-smile-text leading-tight">Julia K.</h4>
+                                        <span class="text-[10px] font-mono uppercase text-stone-400">Florianópolis,
+                                            SC</span>
+                                    </div>
+                                </div>
+                                <div class="flex text-smile-purple-vivid gap-0.5 text-sm drop-shadow-sm">
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                    <iconify-icon icon="lucide:star" class="fill-current"></iconify-icon>
+                                </div>
+                            </div>
+                            <p class="text-stone-600 font-sans leading-relaxed text-[15px] font-medium">"O combo de 3
+                                caixas é sensacional, vale cada centavo. Sem dor nenhuma como no clareamento de
+                                consultório."</p>
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="anim-6-carousel mt-[120px] md:mt-24 opacity-0 text-[10px] font-mono uppercase text-stone-400 tracking-widest flex items-center gap-2">
+                        <iconify-icon icon="lucide:info" class="text-sm"></iconify-icon>
+                        Experiências relatadas e percepções reais de uso
+                    </div>
+                </div>
+
+                <!-- Right: SEO FAQ Accordion -->
+                <div class="flex flex-col w-full h-full lg:pl-8">
+                    <div class="mb-10 text-center lg:text-left anim-6-faq opacity-0 translate-y-6">
+                        <h3 class="font-display text-2xl font-bold text-smile-text mb-2">Perguntas Frequentes</h3>
+                        <p class="text-sm text-stone-500">Tire suas dúvidas e sinta segurança na escolha.</p>
+                    </div>
+
+                    <div class="space-y-3 w-full" id="faq-accordion">
+                        <!-- FAQ Items -->
+                        <div
+                            class="anim-6-faq item glass-panel bg-white/70 border border-stone-200 rounded-[1.25rem] overflow-hidden transition-all duration-300 opacity-0 translate-y-6">
+                            <button class="flex items-center justify-between w-full p-5 text-left group"
+                                onclick="toggleFaq(this)">
+                                <span
+                                    class="font-semibold text-smile-text text-[15px] group-hover:text-smile-purple-main transition-colors">SmileShift
+                                    funciona mesmo?</span>
+                                <div
+                                    class="faq-icon w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-smile-purple-main shrink-0 transition-transform duration-500 pointer-events-none">
+                                    <iconify-icon icon="lucide:plus"></iconify-icon>
+                                </div>
+                            </button>
+                            <div
+                                class="faq-content h-0 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] will-change-[height]">
+                                <div class="p-5 pt-0 text-sm text-stone-600 leading-relaxed">
+                                    Sim! O SmileShift utiliza a consagrada tecnologia V34, projetada para agir na
+                                    correção de cor cancelando os subtons amarelos inteligentemente. É o clareamento
+                                    dental em casa ideal para resultados instantâneos.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="anim-6-faq item glass-panel bg-white/70 border border-stone-200 rounded-[1.25rem] overflow-hidden transition-all duration-300 opacity-0 translate-y-6">
+                            <button class="flex items-center justify-between w-full p-5 text-left group"
+                                onclick="toggleFaq(this)">
+                                <span
+                                    class="font-semibold text-smile-text text-[15px] group-hover:text-smile-purple-main transition-colors">Em
+                                    quanto tempo vejo resultado?</span>
+                                <div
+                                    class="faq-icon w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-smile-purple-main shrink-0 transition-transform duration-500 pointer-events-none">
+                                    <iconify-icon icon="lucide:plus"></iconify-icon>
+                                </div>
+                            </button>
+                            <div
+                                class="faq-content h-0 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] will-change-[height]">
+                                <div class="p-5 pt-0 text-sm text-stone-600 leading-relaxed">
+                                    Muitos clientes percebem um sorriso mais branco logo na primeira aplicação de 30
+                                    minutos, dependendo do grau de amarelamento atual. Fatores cumulativos trazem
+                                    resultados superiores.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="anim-6-faq item glass-panel bg-white/70 border border-stone-200 rounded-[1.25rem] overflow-hidden transition-all duration-300 opacity-0 translate-y-6">
+                            <button class="flex items-center justify-between w-full p-5 text-left group"
+                                onclick="toggleFaq(this)">
+                                <span
+                                    class="font-semibold text-smile-text text-[15px] group-hover:text-smile-purple-main transition-colors">O
+                                    produto causa sensibilidade?</span>
+                                <div
+                                    class="faq-icon w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-smile-purple-main shrink-0 transition-transform duration-500 pointer-events-none">
+                                    <iconify-icon icon="lucide:plus"></iconify-icon>
+                                </div>
+                            </button>
+                            <div
+                                class="faq-content h-0 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] will-change-[height]">
+                                <div class="p-5 pt-0 text-sm text-stone-600 leading-relaxed">
+                                    Não. Diferente de géis abrasivos baseados em peróxido altíssimo, a nossa fórmula é
+                                    não-invasiva e livre de dor. É o clareamento sem sensibilidade perfeito para uso
+                                    diário.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="anim-6-faq item glass-panel bg-white/70 border border-stone-200 rounded-[1.25rem] overflow-hidden transition-all duration-300 opacity-0 translate-y-6">
+                            <button class="flex items-center justify-between w-full p-5 text-left group"
+                                onclick="toggleFaq(this)">
+                                <span
+                                    class="font-semibold text-smile-text text-[15px] group-hover:text-smile-purple-main transition-colors">Funciona
+                                    para manchas de café e vinho?</span>
+                                <div
+                                    class="faq-icon w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-smile-purple-main shrink-0 transition-transform duration-500 pointer-events-none">
+                                    <iconify-icon icon="lucide:plus"></iconify-icon>
+                                </div>
+                            </button>
+                            <div
+                                class="faq-content h-0 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] will-change-[height]">
+                                <div class="p-5 pt-0 text-sm text-stone-600 leading-relaxed">
+                                    Perfeitamente. O corretor de cor reage agressivamente a tons pesados amarelos
+                                    originários de tabaco, café, vinho ou chá, revelando dentes mais brancos
+                                    instantaneamente.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="anim-6-faq item glass-panel bg-white/70 border border-stone-200 rounded-[1.25rem] overflow-hidden transition-all duration-300 opacity-0 translate-y-6">
+                            <button class="flex items-center justify-between w-full p-5 text-left group"
+                                onclick="toggleFaq(this)">
+                                <span
+                                    class="font-semibold text-smile-text text-[15px] group-hover:text-smile-purple-main transition-colors">Quantas
+                                    aplicações vêm em cada caixa?</span>
+                                <div
+                                    class="faq-icon w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-smile-purple-main shrink-0 transition-transform duration-500 pointer-events-none">
+                                    <iconify-icon icon="lucide:plus"></iconify-icon>
+                                </div>
+                            </button>
+                            <div
+                                class="faq-content h-0 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] will-change-[height]">
+                                <div class="p-5 pt-0 text-sm text-stone-600 leading-relaxed">
+                                    Cada caixa do clareador dental SmileShift conta com 14 tiras clareadoras exclusivas
+                                    de uso individual, garantindo tratamentos pontuais focados.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="anim-6-faq item glass-panel bg-white/70 border border-stone-200 rounded-[1.25rem] overflow-hidden transition-all duration-300 opacity-0 translate-y-6">
+                            <button class="flex items-center justify-between w-full p-5 text-left group"
+                                onclick="toggleFaq(this)">
+                                <span
+                                    class="font-semibold text-smile-text text-[15px] group-hover:text-smile-purple-main transition-colors">SmileShift
+                                    é seguro para o esmalte?</span>
+                                <div
+                                    class="faq-icon w-8 h-8 rounded-full bg-stone-100 flex items-center justify-center text-smile-purple-main shrink-0 transition-transform duration-500 pointer-events-none">
+                                    <iconify-icon icon="lucide:plus"></iconify-icon>
+                                </div>
+                            </button>
+                            <div
+                                class="faq-content h-0 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] will-change-[height]">
+                                <div class="p-5 pt-0 text-sm text-stone-600 leading-relaxed">
+                                    100% seguro. Nossa matriz não abrasiva protege a dentina e o esmalte em vez de
+                                    corroê-los, sendo altamente recomendado por quem tem hiper-sensibilidade natural.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Script Execution -->
     <script>
         // Initialize Lucide Icons
@@ -916,6 +1529,97 @@
                 .to('.anim-4-block', { y: 0, opacity: 1, duration: 0.7, ease: "power2.out", stagger: 0.15 }, "-=0.5")
                 .to('.anim-4-final', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.3");
         });
+
+        // 8. Cinematic Entrance for Fifth Fold (Pricing)
+        window.addEventListener('DOMContentLoaded', () => {
+            const tl5 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#fifth-fold",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            const isDesktop = window.innerWidth >= 768;
+
+            tl5.to('.anim-5-tag', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" })
+                .to('.anim-5-title', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.6")
+                .to('.anim-5-sub', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.7")
+                .to('.anim-5-card', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out", stagger: 0.2 }, "-=0.4")
+                .to('.anim-5-card-main', {
+                    scale: isDesktop ? 1.05 : 1,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "elastic.out(1, 0.75)"
+                }, isDesktop ? "-=0.7" : "-=1.0")
+                .to('.anim-5-trust', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.8");
+
+            // 9. Stacked Carousel Testimonials Loop
+            const tCards = document.querySelectorAll('.t-stack-card');
+            if (tCards.length > 0) {
+                let currentStatus = [1, 2, 3, 4, 5, 6];
+                setInterval(() => {
+                    // shift statuses
+                    currentStatus.unshift(currentStatus.pop());
+                    tCards.forEach((c, i) => {
+                        // clear existing s-* classes matching exactly s-1, s-2, etc
+                        c.className = c.className.replace(/\bs-\d\b/g, '').trim();
+                        // add new class
+                        c.classList.add(`s-${currentStatus[i]}`);
+                    });
+                }, 4000);
+            }
+
+            // 10. Sixth Fold GSAP Animation
+            const tl6 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#sixth-fold",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            tl6.to('.anim-6-tag', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" })
+                .to('.anim-6-title', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.6")
+                .to('.anim-6-sub', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.7")
+                .to('.anim-6-carousel', { scale: 1, opacity: 1, duration: 1, ease: "back.out(1.2)" }, "-=0.5")
+                .to('.anim-6-faq', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out", stagger: 0.1 }, "-=0.6");
+        });
+
+        // FAQ Accordion Toggle
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const iconWrapper = button.querySelector('.faq-icon');
+            const parentItem = button.parentElement;
+
+            // Close all others
+            document.querySelectorAll('#faq-accordion .faq-content').forEach(el => {
+                if (el !== content) {
+                    el.style.height = '0px';
+                    el.previousElementSibling.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    el.previousElementSibling.querySelector('.faq-icon').classList.remove('bg-smile-purple-main', 'text-white');
+                    el.previousElementSibling.querySelector('.faq-icon').classList.add('bg-stone-100', 'text-smile-purple-main');
+                    el.parentElement.classList.remove('border-smile-purple-main/40', 'shadow-md');
+                    el.parentElement.classList.add('border-stone-200');
+                }
+            });
+
+            if (content.style.height && content.style.height !== '0px') {
+                content.style.height = '0px';
+                iconWrapper.style.transform = 'rotate(0deg)';
+                iconWrapper.classList.remove('bg-smile-purple-main', 'text-white');
+                iconWrapper.classList.add('bg-stone-100', 'text-smile-purple-main');
+                parentItem.classList.remove('border-smile-purple-main/40', 'shadow-md');
+                parentItem.classList.add('border-stone-200');
+            } else {
+                content.style.height = content.scrollHeight + 'px';
+                iconWrapper.style.transform = 'rotate(45deg)';
+                iconWrapper.classList.remove('bg-stone-100', 'text-smile-purple-main');
+                iconWrapper.classList.add('bg-smile-purple-main', 'text-white');
+                parentItem.classList.remove('border-stone-200');
+                parentItem.classList.add('border-smile-purple-main/40', 'shadow-md');
+            }
+        }
 
     </script>
 </body>
