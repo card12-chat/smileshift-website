@@ -2,6 +2,20 @@
 <html lang="pt-BR">
 
 <head>
+    <!-- Google Tag Manager -->
+    <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];
+      w[l].push({'gtm.start': new Date().getTime(), event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s);
+      j.async=true;
+      j.src="https://api.smileshift.co/c4qgkdwhpku.js?"+i;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','3ev2=HA9NLyMpRiw5KEgkJlchQQNWQkZGQg8JSBgdARsBGA8cDQRGFAs%3D');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>SmileShift | Transforme seu sorriso</title>
@@ -340,9 +354,9 @@
 
             <!-- Center: Nav -->
             <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-widest text-white/50">
-                <a href="#" class="hover:text-white transition-colors">Tecnologia</a>
-                <a href="#" class="hover:text-white transition-colors">Resultados</a>
-                <a href="#" class="hover:text-white transition-colors">Como Funciona</a>
+                <a href="javascript:void(0)" onclick="smoothScrollTo('#fourth-fold')" class="hover:text-white transition-colors">Tecnologia</a>
+                <a href="javascript:void(0)" onclick="smoothScrollTo('#sixth-fold')" class="hover:text-white transition-colors">Resultados</a>
+                <a href="javascript:void(0)" onclick="smoothScrollTo('#second-fold')" class="hover:text-white transition-colors">Como Funciona</a>
             </nav>
 
             <!-- Right: Action / Utility -->
@@ -416,21 +430,27 @@
                     </p>
 
                     <div class="flex flex-col sm:flex-row gap-4 reveal-up delay-400 w-full sm:w-auto">
-                        <!-- Primary Button (Beam) -->
-                        <div
-                            class="btn-beam px-[1px] py-[1px] group cursor-pointer w-full sm:w-auto hover:-translate-y-1 transition-transform">
-                            <div
-                                class="btn-beam-content w-full sm:w-auto px-8 py-4 font-mono text-xs uppercase tracking-widest group-hover:bg-smile-purple-main transition-colors duration-300 flex justify-center items-center gap-2 drop-shadow-xl shadow-smile-purple-main/20">
-                                Comprar Agora
-                                <i data-lucide="arrow-right"
-                                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        <!-- Primary Button (Comprar Agora) -->
+                        <button onclick="scrollToOfferCinema()"
+                            class="w-full sm:w-auto p-[2px] rounded-[1.25rem] relative overflow-hidden group/beam shadow-2xl shadow-smile-purple-main/30 hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] transition-all duration-700 transform hover:-translate-y-1 active:scale-[0.97] bg-[#3B195E] border border-[#3B195E] hover:bg-[#22C55E] hover:border-[#22C55E]">
+                            <!-- Animated border slide effect -->
+                            <div class="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_70%,#d8b4fe_100%)] animate-[spin_2s_linear_infinite] opacity-100 group-hover/beam:opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+                            <!-- Button Inner -->
+                            <div class="w-full h-full bg-smile-purple-main group-hover/beam:bg-[#22C55E] rounded-[18px] relative z-10 px-8 py-4 flex items-center justify-center transition-colors duration-500 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
+                                <span class="relative z-10 flex items-center justify-center gap-2 font-mono text-xs font-bold uppercase tracking-[0.2em] text-white">
+                                    Comprar Agora
+                                    <iconify-icon icon="lucide:arrow-right" class="text-sm group-hover/beam:translate-x-1.5 transition-transform duration-300"></iconify-icon>
+                                </span>
                             </div>
-                        </div>
+                        </button>
 
-                        <!-- Secondary Button (Ghost) -->
-                        <button
-                            class="w-full sm:w-auto px-8 py-4 border border-stone-300 hover:border-smile-purple-main hover:bg-smile-purple-glow/30 transition-all rounded-full text-smile-text font-mono text-xs uppercase tracking-widest bg-white/70 backdrop-blur-md shadow-sm">
-                            Como Funciona
+                        <!-- Secondary Button (Ghost/Glass) -->
+                        <button onclick="scrollToHowItWorks()"
+                            class="w-full sm:w-auto px-8 py-4 border border-stone-200/80 hover:border-smile-purple-main/40 hover:bg-white/80 transition-all duration-500 rounded-[1.25rem] text-smile-text font-mono text-xs font-semibold uppercase tracking-[0.2em] bg-white/50 backdrop-blur-md shadow-sm hover:shadow-[0_10px_30px_rgba(90,44,140,0.08)] hover:-translate-y-1 active:scale-[0.97] group">
+                            <span class="flex items-center justify-center gap-2">
+                                Como Funciona
+                                <iconify-icon icon="lucide:chevron-down" class="text-smile-purple-main text-sm group-hover:translate-y-1 transition-transform duration-300"></iconify-icon>
+                            </span>
                         </button>
                     </div>
 
@@ -452,7 +472,7 @@
 
     <!-- Rest of the page content can go below -->
     <!-- Second Fold: Emotional Benefits & Conversion -->
-    <section
+    <section id="second-fold"
         class="relative w-full bg-white -mt-[25vh] md:mt-0 pt-32 pb-6 md:pt-32 md:pb-32 lg:pt-40 lg:pb-40 overflow-hidden z-20 rounded-t-[3rem] md:rounded-none">
 
         <!-- Huge Background Watermark -->
@@ -1513,6 +1533,176 @@
         </div>
     </section>
 
+    <!-- Eighth Fold: Risk Reversal & Security -->
+    <section id="eighth-fold" class="relative w-full bg-[#fbfbfe] py-32 lg:py-48 overflow-hidden z-20 border-t border-stone-200/40">
+        
+        <!-- Ambient Liquid Glows -->
+        <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+            <div class="w-[800px] h-[800px] bg-smile-blue-tech/5 rounded-full blur-[100px] absolute -top-40 -left-40"></div>
+            <div class="w-[600px] h-[600px] bg-brand-gradient opacity-[0.03] rounded-full blur-[100px] absolute bottom-0 right-0"></div>
+        </div>
+
+        <div class="max-w-[1240px] w-full mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                
+                <!-- Left: Text & Features -->
+                <div class="flex flex-col">
+                    <div class="anim-8-tag inline-flex items-center gap-2 mb-6 opacity-0 translate-y-6">
+                        <span class="w-1.5 h-1.5 bg-smile-purple-vivid rounded-full shadow-[0_0_8px_#7B3FC7] animate-pulse"></span>
+                        <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-smile-purple-main font-bold bg-[#1E5CC6]/5 px-3 py-1.5 rounded-full border border-smile-purple-main/20 shadow-sm">COMPRA SEGURA</span>
+                    </div>
+
+                    <h2 class="anim-8-title font-display text-4xl md:text-5xl lg:text-[3.5rem] font-bold tracking-tighter text-smile-text mb-6 opacity-0 translate-y-6 leading-[1.05]">
+                        Você não corre <span class="text-transparent bg-clip-text bg-brand-gradient">risco</span> ao testar.
+                    </h2>
+
+                    <p class="anim-8-sub text-lg md:text-xl text-stone-500 leading-relaxed font-light mb-12 opacity-0 translate-y-6 max-w-lg">
+                        Você pode experimentar o SmileShift com tranquilidade. Simples, direto e sem complicação.
+                    </p>
+
+                    <!-- Trust Features -->
+                    <div class="space-y-6 mb-16">
+                        <div class="anim-8-feature flex items-start gap-4 opacity-0 translate-x-[-20px]">
+                            <div class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main shadow-sm flex-shrink-0">
+                                <iconify-icon icon="lucide:shield-check" class="text-xl"></iconify-icon>
+                            </div>
+                            <div class="mt-1">
+                                <h4 class="text-lg font-bold text-smile-text cursor-default">Compra segura</h4>
+                                <p class="text-sm text-stone-500 mt-1 leading-relaxed cursor-default">Transação protegida e garantia incondicional de satisfação.</p>
+                            </div>
+                        </div>
+
+                        <div class="anim-8-feature flex items-start gap-4 opacity-0 translate-x-[-20px]">
+                            <div class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main shadow-sm flex-shrink-0">
+                                <iconify-icon icon="lucide:home" class="text-xl"></iconify-icon>
+                            </div>
+                            <div class="mt-1">
+                                <h4 class="text-lg font-bold text-smile-text cursor-default">Aplicação simples em casa</h4>
+                                <p class="text-sm text-stone-500 mt-1 leading-relaxed cursor-default">Sem necessidade de luzes estranhas, moldes ou bagunça.</p>
+                            </div>
+                        </div>
+
+                        <div class="anim-8-feature flex items-start gap-4 opacity-0 translate-x-[-20px]">
+                            <div class="w-12 h-12 rounded-2xl flex items-center justify-center bg-smile-purple-main/5 text-smile-purple-main shadow-sm flex-shrink-0">
+                                <iconify-icon icon="lucide:sparkles" class="text-xl"></iconify-icon>
+                            </div>
+                            <div class="mt-1">
+                                <h4 class="text-lg font-bold text-smile-text cursor-default">Sem procedimentos clínicos</h4>
+                                <p class="text-sm text-stone-500 mt-1 leading-relaxed cursor-default">Resultados estéticos direto da sua bancada de banheiro.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Final Conversion Point -->
+                    <div class="flex flex-col max-w-sm">
+                        <h3 class="anim-8-final font-display text-xl md:text-2xl font-bold text-smile-text mb-6 opacity-0 translate-y-6">
+                            A decisão agora não é sobre risco. <br class="hidden md:block"/>
+                            <span class="text-smile-purple-vivid">É sobre começar.</span>
+                        </h3>
+
+                        <button onclick="scrollToOfferCinema()"
+                            class="anim-8-btn opacity-0 translate-y-6 w-full p-[2px] rounded-[1.25rem] relative overflow-hidden group/beam shadow-xl shadow-smile-purple-main/20 hover:shadow-[0_0_40px_rgba(34,197,94,0.4)] transition-all duration-700 transform hover:-translate-y-1 active:scale-[0.97] bg-[#3B195E] border border-[#3B195E] hover:bg-[#22C55E] hover:border-[#22C55E]">
+                            <div class="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_70%,#d8b4fe_100%)] animate-[spin_2s_linear_infinite] opacity-100 group-hover/beam:opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+                            
+                            <div class="w-full h-full bg-smile-purple-main group-hover/beam:bg-[#22C55E] rounded-[18px] relative z-10 px-8 py-5 flex items-center justify-center transition-colors duration-500 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15)]">
+                                <span class="relative z-10 flex items-center justify-center gap-3 font-mono text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-white">
+                                    ESCOLHER MEU COMBO
+                                    <iconify-icon icon="lucide:arrow-right" class="text-base group-hover/beam:translate-x-2 transition-transform duration-300"></iconify-icon>
+                                </span>
+                            </div>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Right: Clean Minimal Product -->
+                <div class="anim-8-visual flex justify-center items-center relative opacity-0 scale-95 origin-center mt-6 lg:mt-0">
+                    <!-- Subtle Glow -->
+                    <div class="absolute inset-0 bg-smile-purple-light/20 blur-[120px] rounded-full w-[90%] h-[90%] scale-110 top-[5%] left-[5%] mix-blend-multiply opacity-50 z-0 animate-pulse-glow"></div>
+                    
+                    <div class="relative w-full max-w-[480px] aspect-[4/5] z-10">
+                        <img src="raw_files/seguro (1).png" alt="SmileShift Compra Segura" class="w-full h-full object-cover rounded-[3rem] shadow-[0_45px_100px_rgba(90,44,140,0.15)] bg-white border border-black/[0.03] animate-[float_10s_ease-in-out_infinite_alternate]"/>
+                    </div>
+                </div>
+
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="site-footer" class="relative w-full bg-white pt-20 pb-8 md:pt-32 overflow-hidden z-20">
+        
+        <div class="max-w-[1240px] w-full mx-auto px-6 md:px-12 relative z-10 flex flex-col">
+            
+            <!-- Pre-Footer Action Line -->
+            <div class="anim-9-item w-full flex flex-col items-center justify-center border-b border-stone-200/50 pb-16 md:pb-24 mb-16 md:mb-20 opacity-0 translate-y-6">
+                <span class="text-sm md:text-base font-mono uppercase tracking-[0.25em] text-smile-purple-main font-bold mb-4">Finalize sua jornada</span>
+                <h3 class="font-display text-3xl md:text-5xl font-bold tracking-tighter text-smile-text text-center">
+                    Seu próximo sorriso começa <span class="text-transparent bg-clip-text bg-brand-gradient">agora.</span>
+                </h3>
+            </div>
+
+            <!-- Footer Main Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-16 mb-16 md:mb-20">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="anim-9-item md:col-span-12 lg:col-span-4 flex flex-col opacity-0 translate-y-6">
+                    <div class="text-[28px] font-display font-bold tracking-tighter select-none mb-6 text-smile-text" style="-webkit-text-stroke: 1px #A875D6; color: transparent;">
+                        SMILESHIFT
+                    </div>
+                    <p class="text-stone-500 leading-relaxed font-normal text-sm max-w-[280px]">
+                        Clareamento dental em casa com praticidade, conforto e resultado visível.
+                    </p>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div class="anim-9-item md:col-span-4 lg:col-span-3 lg:col-start-6 flex flex-col opacity-0 translate-y-6">
+                    <h4 class="font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-smile-text mb-6">Navegação</h4>
+                    <ul class="flex flex-col gap-4">
+                        <li><a href="javascript:void(0)" onclick="smoothScrollTo('#fourth-fold')" class="text-stone-500 hover:text-smile-purple-main font-medium text-sm transition-colors duration-300 flex items-center gap-2 group"><iconify-icon icon="lucide:arrow-right" class="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-smile-purple-vivid"></iconify-icon> Tecnologia</a></li>
+                        <li><a href="javascript:void(0)" onclick="smoothScrollTo('#third-fold')" class="text-stone-500 hover:text-smile-purple-main font-medium text-sm transition-colors duration-300 flex items-center gap-2 group"><iconify-icon icon="lucide:arrow-right" class="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-smile-purple-vivid"></iconify-icon> Resultados</a></li>
+                        <li><a href="javascript:void(0)" onclick="smoothScrollTo('#second-fold')" class="text-stone-500 hover:text-smile-purple-main font-medium text-sm transition-colors duration-300 flex items-center gap-2 group"><iconify-icon icon="lucide:arrow-right" class="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-smile-purple-vivid"></iconify-icon> Como Funciona</a></li>
+                        <li><a href="javascript:void(0)" onclick="smoothScrollTo('#fifth-fold')" class="text-stone-500 hover:text-smile-purple-main font-medium text-sm transition-colors duration-300 flex items-center gap-2 group"><iconify-icon icon="lucide:arrow-right" class="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-smile-purple-vivid"></iconify-icon> Oferta</a></li>
+                        <li><a href="javascript:void(0)" onclick="smoothScrollTo('#sixth-fold')" class="text-stone-500 hover:text-smile-purple-main font-medium text-sm transition-colors duration-300 flex items-center gap-2 group"><iconify-icon icon="lucide:arrow-right" class="text-[10px] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-smile-purple-vivid"></iconify-icon> FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Legal & Support -->
+                <div class="anim-9-item md:col-span-8 lg:col-span-4 flex flex-col opacity-0 translate-y-6">
+                    <h4 class="font-mono text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-smile-text mb-6">Institucional</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                        <a href="#" class="text-stone-500 hover:text-smile-text font-medium text-sm transition-colors duration-300">Política de Privacidade</a>
+                        <a href="#" class="text-stone-500 hover:text-smile-text font-medium text-sm transition-colors duration-300">Termos de Uso</a>
+                        <a href="#" class="text-stone-500 hover:text-smile-text font-medium text-sm transition-colors duration-300 flex items-center gap-2"><div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_5px_#22c55e]"></div> Contato</a>
+                        <a href="#" class="text-stone-500 hover:text-smile-text font-medium text-sm transition-colors duration-300">Trocas e Devoluções</a>
+                        <a href="#" class="text-stone-500 hover:text-smile-text font-medium text-sm transition-colors duration-300">Frete e Entrega</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Line (Trust & Copyright) -->
+            <div class="anim-9-item w-full pt-8 border-t border-stone-200/60 flex flex-col md:flex-row justify-between items-center gap-6 opacity-0">
+                <p class="text-[12px] md:text-[13px] text-stone-400 font-medium">
+                    &copy; 2026 SmileShift. Todos os direitos reservados.
+                </p>
+
+                <div class="flex flex-wrap justify-center items-center gap-3 md:gap-4 text-[11px] md:text-[12px] font-medium text-stone-500">
+                    <div class="flex items-center gap-1.5">
+                        <iconify-icon icon="lucide:lock" class="text-smile-purple-vivid text-sm"></iconify-icon> Compra segura
+                    </div>
+                    <span class="text-stone-300 hidden sm:block">•</span>
+                    <div class="flex items-center gap-1.5">
+                        <iconify-icon icon="lucide:shield-check" class="text-smile-purple-vivid text-sm"></iconify-icon> Navegação protegida
+                    </div>
+                    <span class="text-stone-300 hidden sm:block">•</span>
+                    <div class="flex items-center gap-1.5">
+                        <iconify-icon icon="lucide:message-circle" class="text-smile-purple-vivid text-sm"></iconify-icon> Atendimento disponível
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
     <!-- Script Execution -->
     <script>
         // Initialize Lucide Icons
@@ -1737,6 +1927,23 @@
                .to('.anim-7-final', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.5")
                .to('.anim-7-btn', { y: 0, scale: 1, opacity: 1, duration: 1, ease: "elastic.out(1, 0.75)" }, "-=0.6")
                .to('.anim-7-trust', { opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.8");
+
+            // 11.5 Eighth Fold GSAP Animation (Risk Reversal)
+            const tl8 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#eighth-fold",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            tl8.to('.anim-8-tag', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" })
+               .to('.anim-8-title', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.6")
+               .to('.anim-8-sub', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.7")
+               .to('.anim-8-visual', { scale: 1, opacity: 1, duration: 1.2, ease: "power3.out" }, "-=0.5")
+               .to('.anim-8-feature', { x: 0, opacity: 1, duration: 0.8, ease: "power2.out", stagger: 0.15 }, "-=0.8")
+               .to('.anim-8-final', { y: 0, opacity: 1, duration: 0.8, ease: "power2.out" }, "-=0.6")
+               .to('.anim-8-btn', { y: 0, scale: 1, opacity: 1, duration: 1, ease: "elastic.out(1, 0.75)" }, "-=0.5");
         });
 
         // FAQ Accordion Toggle
@@ -1799,6 +2006,52 @@
             }
         }
 
+        // 12.5 Cinematic Scroll Functions for Hero Buttons
+        // Custom easing curve: Starts luxuriously slow to showcase the Hero video scrub, 
+        // glides smoothly through the middle, and lands softly. (easeInOutQuart)
+        const cinematicEase = (t) => t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+
+        function scrollToOfferCinema() {
+            const offerSection = document.getElementById('fifth-fold');
+            if (offerSection) {
+                // Prolonged 2.8s duration with custom quart easing for a guided narrative feel
+                lenis.scrollTo(offerSection, { 
+                    offset: -50, 
+                    duration: 2.8,
+                    easing: cinematicEase 
+                }); 
+                
+                // Highlight offer card on arrival
+                setTimeout(() => {
+                    const mainCard = document.querySelector('.anim-5-card-main');
+                    if (mainCard) {
+                        gsap.to(mainCard, { 
+                            scale: window.innerWidth >= 768 ? 1.08 : 1.03, 
+                            boxShadow: "0 0 80px rgba(123, 63, 199, 0.5)",
+                            borderColor: "rgba(123, 63, 199, 1)",
+                            duration: 0.4, 
+                            yoyo: true, 
+                            repeat: 3, 
+                            ease: "power2.inOut",
+                            clearProps: "all"
+                        });
+                    }
+                }, 2900); // Trigger just after the 2.8s scroll ends
+            }
+        }
+
+        function scrollToHowItWorks() {
+            const howItWorksSection = document.getElementById('second-fold');
+            if (howItWorksSection) {
+                // 1.8s duration for the immediate next section, slow enough to appreciate the video exit
+                lenis.scrollTo(howItWorksSection, { 
+                    offset: 0, 
+                    duration: 1.8,
+                    easing: cinematicEase 
+                });
+            }
+        }
+
         // 13. IP Geolocation for Offer Fold
         window.addEventListener('DOMContentLoaded', () => {
             const geoBadge = document.getElementById('geo-badge');
@@ -1832,6 +2085,51 @@
                     ease: "power3.out"
                 });
             }
+        });
+
+        // 13.5 Unified Smooth Scroll for Footer Anchors
+        function smoothScrollTo(targetSelector) {
+            const section = document.querySelector(targetSelector);
+            if (section) {
+                // Prolonged sweep to provide maximum visual absorption of the entire stack.
+                lenis.scrollTo(section, {
+                    offset: targetSelector === '#fifth-fold' ? -50 : 0,
+                    duration: 3,
+                    easing: cinematicEase
+                });
+                
+                // If it's the offer target, piggy-back the highlight animation
+                if (targetSelector === '#fifth-fold') {
+                    setTimeout(() => {
+                        const mainCard = document.querySelector('.anim-5-card-main');
+                        if (mainCard) {
+                            gsap.to(mainCard, { 
+                                scale: window.innerWidth >= 768 ? 1.08 : 1.03, 
+                                boxShadow: "0 0 80px rgba(123, 63, 199, 0.5)",
+                                borderColor: "rgba(123, 63, 199, 1)",
+                                duration: 0.4, 
+                                yoyo: true, 
+                                repeat: 3, 
+                                ease: "power2.inOut",
+                                clearProps: "all"
+                            });
+                        }
+                    }, 3100); 
+                }
+            }
+        }
+
+        // 14. Ninth Fold GSAP Animation (Footer)
+        window.addEventListener('DOMContentLoaded', () => {
+            const tl9 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#site-footer",
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            tl9.to('.anim-9-item', { y: 0, opacity: 1, duration: 1, ease: "power2.out", stagger: 0.15 });
         });
 
     </script>
