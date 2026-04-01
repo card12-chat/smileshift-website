@@ -382,10 +382,8 @@
 
             <!-- Fullscreen Video Background -->
             <div class="absolute inset-0 w-full h-full z-0 bg-smile-bg flex flex-col justify-start">
-                <!-- Video Element covering entire screen -->
-                <video id="hero-video" src="media/VIDEO 4.mp4"
-                    class="w-full h-[75vh] md:h-full object-cover object-center md:object-[5%_center] relative z-10 scale-[1.01]"
-                    muted playsinline preload="auto" disablePictureInPicture></video>
+                <!-- Canvas Element covering entire screen for 60fps Scrubbing -->
+                <canvas id="hero-canvas" class="w-full h-[75vh] md:h-full object-cover object-center md:object-[5%_center] relative z-10 scale-[1.01]"></canvas>
 
                 <!-- Cinematic Gradient Overlay for text readability based on Design System -->
                 <div
@@ -1743,65 +1741,72 @@
         // 3. Scroll-Driven Video Playback Logic
         gsap.registerPlugin(ScrollTrigger);
 
-        const video = document.getElementById('hero-video');
+        // 4. Scroll-Driven Fade & Blur using GSAP
+        const heroText = document.getElementById('hero-text-content');
+        const scrollIndicator = document.getElementById('hero-scroll-indicator');
 
-        let targetTime = 0;
-        let currentTime = 0;
-        const interpolationFactor = 0.08; // Adjust for smoother/tighter scrubbing feel
+        gsap.to([heroText, scrollIndicator], {
+            scrollTrigger: {
+                trigger: "#hero-scroll-container",
+                start: "top top",
+                end: "top -30%",
+                scrub: true
+            },
+            opacity: 0,
+            y: -40,
+            filter: "blur(15px)",
+            ease: "none"
+        });
 
-        // Wait for video metadata to be loaded to know exactly how long the video is
-        video.addEventListener('loadedmetadata', () => {
+        // 5. Canvas Image Sequence Scrubbing (High Performance iOS/Mobile Fix)
+        const canvas = document.getElementById('hero-canvas');
+        const context = canvas.getContext('2d');
+        
+        const frameCount = 192;
+        const currentFrame = index => `media/sequence_optimized/${(index + 1).toString().padStart(4, '0')}.jpg`;
 
-            // Define the ScrollTrigger timeline over the outer container
-            ScrollTrigger.create({
+        const images = [];
+        const imageSeq = { frame: 0 };
+
+        // Preload frames
+        for (let i = 0; i < frameCount; i++) {
+            const img = new Image();
+            img.src = currentFrame(i);
+            images.push(img);
+        }
+
+        // Initialize canvas sizing on first frame load
+        images[0].onload = () => {
+            canvas.width = images[0].naturalWidth;
+            canvas.height = images[0].naturalHeight;
+            renderCanvasFrame();
+        };
+
+        // Render function
+        function renderCanvasFrame() {
+            if (images[imageSeq.frame] && images[imageSeq.frame].complete) {
+                // Ensure canvas sizing is correct just in case
+                if(canvas.width === 300) { // Default HTML width
+                    canvas.width = images[0].naturalWidth;
+                    canvas.height = images[0].naturalHeight;
+                }
+                context.clearRect(0, 0, canvas.width, canvas.height);
+                context.drawImage(images[imageSeq.frame], 0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        // Bind sequence to ScrollTrigger
+        gsap.to(imageSeq, {
+            frame: frameCount - 1,
+            snap: "frame",
+            ease: "none",
+            scrollTrigger: {
                 trigger: "#hero-scroll-container",
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 1,
-                onUpdate: (self) => {
-                    // Map scroll progress (0...1) to video duration
-                    targetTime = self.progress * video.duration;
-                }
-            });
-
-            // requestAnimationFrame setup for buttery smooth interpolation (lerp)
-            function renderVideoFrame() {
-                if (video.readyState >= 2) {
-                    // Lerp Calculation
-                    currentTime += (targetTime - currentTime) * interpolationFactor;
-
-                    // Only update video if there's a significant change to save performance
-                    if (Math.abs(targetTime - currentTime) > 0.005) {
-                        video.currentTime = currentTime;
-                    }
-                }
-                requestAnimationFrame(renderVideoFrame);
-            }
-
-            // Start the loop
-            requestAnimationFrame(renderVideoFrame);
-
-            // Quick set to initial frame just in case
-            video.currentTime = 0.001;
-
-            // 4. Scroll-Driven Fade & Blur using GSAP
-            const heroText = document.getElementById('hero-text-content');
-            const scrollIndicator = document.getElementById('hero-scroll-indicator');
-
-            // This applies a true GSAP scrub tween to the entire text block, 
-            // ensuring both opacity and blur interpolate perfectly with scroll.
-            gsap.to([heroText, scrollIndicator], {
-                scrollTrigger: {
-                    trigger: "#hero-scroll-container",
-                    start: "top top", // When scrolling starts
-                    end: "top -30%",  // Fully faded out when passed this point
-                    scrub: true       // Ties the animation directly to scroll progress
-                },
-                opacity: 0,
-                y: -40,
-                filter: "blur(15px)",
-                ease: "none"
-            });
+                scrub: 0.5 // Smoothing factor
+            },
+            onUpdate: renderCanvasFrame
         });
 
         // 5. Initialize SwiperJS for Third Fold Visual Proof
