@@ -16,6 +16,39 @@
     </script>
     <!-- End Google Tag Manager -->
 
+    <!-- SmileShift Tracking -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+      event: "page_view",
+      page_location: window.location.href,
+      page_title: document.title
+    });
+
+    function handleCheckout(event, product, value, url) {
+      event.preventDefault();
+      window.dataLayer = window.dataLayer || [];
+
+      dataLayer.push({
+        event: "begin_checkout",
+        ecommerce: {
+          currency: "BRL",
+          value: value,
+          items: [{
+            item_name: product,
+            price: value,
+            quantity: 1
+          }]
+        }
+      });
+
+      setTimeout(function() {
+        window.location.href = url;
+      }, 150);
+    }
+    </script>
+    <!-- End SmileShift Tracking -->
+
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>SmileShift | Transforme seu sorriso</title>
@@ -911,10 +944,10 @@
                         </li>
                     </ul>
 
-                    <a href="https://seguro.smileshift.co/r/D2OMQE995J" data-product="1-caixa"
+                    <button onclick="handleCheckout(event, '1_caixa', 97.00, 'https://seguro.smileshift.co/r/D2OMQE995J')" data-product="1-caixa"
                         class="block text-center cursor-pointer w-full py-4 rounded-xl border border-smile-purple-main/20 bg-smile-purple-main text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#22C55E] hover:border-[#22C55E] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 transform active:scale-95 mt-auto md:mt-6 overflow-hidden relative group/btn">
                         <span class="relative z-10">Escolher combo</span>
-                    </a>
+                    </button>
                 </div>
 
                 <!-- Card 2: 3 Boxes (HIGHLIGHT) -->
@@ -971,7 +1004,7 @@
                             </li>
                         </ul>
 
-                        <a href="https://seguro.smileshift.co/r/RY37PZXU9C" data-product="3-caixas"
+                        <button onclick="handleCheckout(event, '3_caixas', 129.70, 'https://seguro.smileshift.co/r/RY37PZXU9C')" data-product="3-caixas"
                             class="block text-center cursor-pointer w-full p-[2px] rounded-xl mt-auto relative overflow-hidden group/beam shadow-lg shadow-smile-purple-main/30 hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all duration-500 transform active:scale-95 bg-[#3B195E] border border-[#3B195E] hover:bg-[#22C55E] hover:border-[#22C55E]">
 
                             <!-- Animated border slide effect (visible on Base) -->
@@ -989,7 +1022,7 @@
                                         class="text-lg group-hover/beam:translate-x-1 transition-transform"></iconify-icon>
                                 </span>
                             </div>
-                        </a>
+                        </button>
                     </div>
                 </div>
 
@@ -1023,10 +1056,10 @@
                         </li>
                     </ul>
 
-                    <a href="https://seguro.smileshift.co/r/NT49IDGLLP" data-product="5-caixas"
+                    <button onclick="handleCheckout(event, '5_caixas', 159.70, 'https://seguro.smileshift.co/r/NT49IDGLLP')" data-product="5-caixas"
                         class="block text-center cursor-pointer w-full py-4 rounded-xl border border-smile-purple-main/20 bg-smile-purple-main text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#22C55E] hover:border-[#22C55E] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 transform active:scale-95 mt-auto md:mt-2 relative overflow-hidden group/btn">
                         <span class="relative z-10">Escolher combo</span>
-                    </a>
+                    </button>
                 </div>
 
             </div>
