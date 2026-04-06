@@ -18,12 +18,27 @@
 
     <!-- SmileShift Tracking -->
     <script>
-    window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-      event: "page_view",
-      page_location: window.location.href,
-      page_title: document.title
-    });
+    (function() {
+      window.dataLayer = window.dataLayer || [];
+
+      function pushPageViewOnce() {
+        if (window.__ss_pageview_sent) return;
+        window.__ss_pageview_sent = true;
+
+        window.dataLayer.push({
+          event: 'page_view',
+          page_location: window.location.href,
+          page_title: document.title,
+          page_path: window.location.pathname
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', pushPageViewOnce);
+      } else {
+        pushPageViewOnce();
+      }
+    })();
 
     function handleCheckout(event, product, value, url) {
       event.preventDefault();
