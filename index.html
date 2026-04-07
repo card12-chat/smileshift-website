@@ -6,53 +6,7 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://api.smileshift.co/c4qgkdwhpku.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','3ev2=HA9NLyMpRiw5KEgkJlchQQNWQkZGQg8JSBgdARsBGA8cDQRGFAs%3D');</script>
     <!-- End Google Tag Manager -->
 
-    <!-- SmileShift Tracking -->
-    <script>
-    (function() {
-      window.dataLayer = window.dataLayer || [];
 
-      function pushPageViewOnce() {
-        if (window.__ss_pageview_sent) return;
-        window.__ss_pageview_sent = true;
-
-        window.dataLayer.push({
-          event: 'page_view',
-          page_location: window.location.href,
-          page_title: document.title,
-          page_path: window.location.pathname
-        });
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', pushPageViewOnce);
-      } else {
-        pushPageViewOnce();
-      }
-    })();
-
-    function handleCheckout(event, product, value, url) {
-      event.preventDefault();
-      window.dataLayer = window.dataLayer || [];
-
-      dataLayer.push({
-        event: "begin_checkout",
-        ecommerce: {
-          currency: "BRL",
-          value: value,
-          items: [{
-            item_name: product,
-            price: value,
-            quantity: 1
-          }]
-        }
-      });
-
-      setTimeout(function() {
-        window.location.href = url;
-      }, 150);
-    }
-    </script>
-    <!-- End SmileShift Tracking -->
 
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -949,10 +903,10 @@
                         </li>
                     </ul>
 
-                    <button onclick="handleCheckout(event, '1_caixa', 97.00, 'https://seguro.smileshift.co/r/D2OMQE995J')" data-product="1-caixa"
+                    <a href="https://seguro.smileshift.co/r/D2OMQE995J" data-product="1-caixa"
                         class="block text-center cursor-pointer w-full py-4 rounded-xl border border-smile-purple-main/20 bg-smile-purple-main text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#22C55E] hover:border-[#22C55E] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 transform active:scale-95 mt-auto md:mt-6 overflow-hidden relative group/btn">
                         <span class="relative z-10">Escolher combo</span>
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Card 2: 3 Boxes (HIGHLIGHT) -->
@@ -1009,7 +963,7 @@
                             </li>
                         </ul>
 
-                        <button onclick="handleCheckout(event, '3_caixas', 129.70, 'https://seguro.smileshift.co/r/RY37PZXU9C')" data-product="3-caixas"
+                        <a href="https://seguro.smileshift.co/r/RY37PZXU9C" data-product="3-caixas"
                             class="block text-center cursor-pointer w-full p-[2px] rounded-xl mt-auto relative overflow-hidden group/beam shadow-lg shadow-smile-purple-main/30 hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] transition-all duration-500 transform active:scale-95 bg-[#3B195E] border border-[#3B195E] hover:bg-[#22C55E] hover:border-[#22C55E]">
 
                             <!-- Animated border slide effect (visible on Base) -->
@@ -1027,7 +981,7 @@
                                         class="text-lg group-hover/beam:translate-x-1 transition-transform"></iconify-icon>
                                 </span>
                             </div>
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -1061,10 +1015,10 @@
                         </li>
                     </ul>
 
-                    <button onclick="handleCheckout(event, '5_caixas', 159.70, 'https://seguro.smileshift.co/r/NT49IDGLLP')" data-product="5-caixas"
+                    <a href="https://seguro.smileshift.co/r/NT49IDGLLP" data-product="5-caixas"
                         class="block text-center cursor-pointer w-full py-4 rounded-xl border border-smile-purple-main/20 bg-smile-purple-main text-white font-mono text-xs font-bold uppercase tracking-widest hover:bg-[#22C55E] hover:border-[#22C55E] hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-300 transform active:scale-95 mt-auto md:mt-2 relative overflow-hidden group/btn">
                         <span class="relative z-10">Escolher combo</span>
-                    </button>
+                    </a>
                 </div>
 
             </div>
@@ -2182,4 +2136,53 @@
     </script>
 </body>
 
+
+<!-- SmileShift Checkout Button Tracking -->
+<script>
+(function () {
+  var BUTTONS = [
+    { selector: 'a[href*="D2OMQE995J"]', product: '1_caixa',  value: 59.90,  currency: 'BRL' },
+    { selector: 'a[href*="RY37PZXU9C"]', product: '3_caixas', value: 129.70, currency: 'BRL' },
+    { selector: 'a[href*="NT49IDGLLP"]', product: '5_caixas', value: 159.70, currency: 'BRL' }
+  ];
+
+  function generateEventId() {
+    return (Date.now().toString(36) + Math.random().toString(36).substr(2, 9)).toUpperCase();
+  }
+
+  function attachTracking(btn, config) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var href = btn.getAttribute('href');
+      var eid  = generateEventId();
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event:    'begin_checkout',
+        product:  config.product,
+        value:    config.value,
+        currency: config.currency,
+        event_id: eid
+      });
+
+      // Allow GTM to process, then navigate
+      setTimeout(function () { window.location.href = href; }, 300);
+    });
+  }
+
+  function init() {
+    BUTTONS.forEach(function (cfg) {
+      document.querySelectorAll(cfg.selector).forEach(function (el) {
+        attachTracking(el, cfg);
+      });
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
 </html>
