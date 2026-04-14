@@ -2156,9 +2156,9 @@
 <script>
 (function () {
   var BUTTONS = [
-    { selector: 'a[href*="D2OMQE995J"]', product: '1_caixa',  value: 59.90,  currency: 'BRL' },
-    { selector: 'a[href*="RY37PZXU9C"]', product: '3_caixas', value: 129.70, currency: 'BRL' },
-    { selector: 'a[href*="NT49IDGLLP"]', product: '5_caixas', value: 159.70, currency: 'BRL' }
+    { selector: 'a[href*="D2OMQE995J"]', itemId: 'kit-1', itemName: 'SmileShift V34', itemVariant: '1 caixa', value: 59.90, currency: 'BRL' },
+    { selector: 'a[href*="RY37PZXU9C"]', itemId: 'kit-3', itemName: 'SmileShift V34', itemVariant: '3 caixas', value: 129.70, currency: 'BRL' },
+    { selector: 'a[href*="NT49IDGLLP"]', itemId: 'kit-5', itemName: 'SmileShift V34', itemVariant: '5 caixas', value: 159.70, currency: 'BRL' }
   ];
 
   function generateEventId() {
@@ -2172,12 +2172,23 @@
       var eid  = generateEventId();
 
       window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ ecommerce: null }); // clear previous ecommerce object
       window.dataLayer.push({
-        event:    'begin_checkout',
-        product:  config.product,
-        value:    config.value,
-        currency: config.currency,
-        event_id: eid
+        event: 'begin_checkout',
+        event_id: eid,
+        ecommerce: {
+          currency: config.currency,
+          value: config.value,
+          items: [
+            {
+              item_id: config.itemId,
+              item_name: config.itemName,
+              item_variant: config.itemVariant,
+              price: config.value,
+              quantity: 1
+            }
+          ]
+        }
       });
 
       // Allow GTM to process, then navigate
