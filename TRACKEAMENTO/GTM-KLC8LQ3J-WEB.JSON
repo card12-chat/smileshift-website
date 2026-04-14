@@ -1,0 +1,559 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-04-07T17:34:08.000Z",
+    "containerVersion": {
+        "path": "accounts/6195173806/containers/222121935/versions/0",
+        "accountId": "6195173806",
+        "containerId": "222121935",
+        "containerVersionId": "0",
+        "name": "SmileShift WEB Clean",
+        "container": {
+            "path": "accounts/6195173806/containers/222121935",
+            "accountId": "6195173806",
+            "containerId": "222121935",
+            "name": "[WEB] SMILESHIFT CLEAN",
+            "publicId": "GTM-KLC8LQ3J",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6195173806/containers/222121935/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            }
+        },
+        "tag": [
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "tagId": "301",
+                "name": "0 - GA4 Config",
+                "type": "googtag",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{0 | GA4 - ID}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "server_container_url"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{0 | transport_url}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "linker"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{\"domains\":[\"smileshift.co\",\"seguro.smileshift.co\"]}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "firingTriggerId": [
+                    "201"
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "tagId": "302",
+                "name": "01 - GA4 Events",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{0 | GA4 - ID}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{Event}}"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "true"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "event_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{CJS - Generate Event ID}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "firingTriggerId": [
+                    "201",
+                    "202"
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "tagId": "303",
+                "name": "FB - PageView",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nif(typeof fbq === 'function'){\n  fbq('track', 'PageView', {}, {eventID: '{{CJS - Generate Event ID}}'});\n}\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "firingTriggerId": [
+                    "201"
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "tagId": "304",
+                "name": "FB - ViewContent",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nif(typeof fbq === 'function'){\n  fbq('track', 'ViewContent', {value: {{DLV - ecommerce.value}}, currency: 'BRL'}, {eventID: '{{CJS - Generate Event ID}}'});\n}\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "firingTriggerId": [
+                    "204"
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "tagId": "305",
+                "name": "FB - InitiateCheckout",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nif(typeof fbq === 'function'){\n  fbq('track', 'InitiateCheckout', {value: {{DLV - ecommerce.value}}, currency: 'BRL'}, {eventID: '{{CJS - Generate Event ID}}'});\n}\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "firingTriggerId": [
+                    "205"
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "tagId": "306",
+                "name": "FB - Purchase",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\nif(typeof fbq === 'function'){\n  fbq('track', 'Purchase', {value: {{DLV - ecommerce.value}}, currency: 'BRL'}, {eventID: '{{DLV - transaction_id}}'});\n}\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "firingTriggerId": [
+                    "203"
+                ]
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "triggerId": "201",
+                "name": "All Pages",
+                "type": "PAGEVIEW"
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "triggerId": "202",
+                "name": "Custom - GA4 Ecommerce",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(view_item|select_item|begin_checkout)$"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "triggerId": "203",
+                "name": "Custom - Purchase",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(purchase)$"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "triggerId": "204",
+                "name": "Custom - ViewItem",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "view_item"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "triggerId": "205",
+                "name": "Custom - BeginCheckout",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "begin_checkout"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "1",
+                "name": "0 | GA4 - ID",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "G-EJR5P2BTSF"
+                    }
+                ],
+                "fingerprint": "1"
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "2",
+                "name": "0 | FB - Pixel",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "961216382957947"
+                    }
+                ],
+                "fingerprint": "2"
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "3",
+                "name": "0 | transport_url",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "https://api.smileshift.co"
+                    }
+                ],
+                "fingerprint": "3"
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "4",
+                "name": "0 | Visitor API Project ID",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "qbsriOdZ1DXSqEr4zsAr"
+                    }
+                ],
+                "fingerprint": "4"
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "101",
+                "name": "DLV - ecommerce.items",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.items"
+                    }
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "102",
+                "name": "DLV - ecommerce.value",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.value"
+                    }
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "103",
+                "name": "DLV - ecommerce.currency",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.currency"
+                    }
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "104",
+                "name": "DLV - transaction_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.transaction_id"
+                    }
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "105",
+                "name": "DLV - external_id (Stape)",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "user_data.external_id"
+                    }
+                ]
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "variableId": "106",
+                "name": "CJS - Generate Event ID",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  var t = new Date().getTime();\n  var r = Math.floor(Math.random() * 1000000);\n  return 'evt_' + t + '_' + r;\n}"
+                    }
+                ]
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6195173806",
+                "containerId": "222121935",
+                "type": "REFERRER",
+                "name": "Referrer"
+            }
+        ],
+        "fingerprint": "1"
+    }
+}

