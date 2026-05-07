@@ -891,7 +891,7 @@
                     data-item-id="kit-1"
                     data-item-name="SmileShift V34"
                     data-item-variant="1 caixa"
-                    data-item-price="59.90"
+                    data-item-price="67.80"
                     data-currency="BRL">
                     <div class="mb-4">
                         <h4 class="text-2xl font-display font-bold text-smile-text mb-1">1 Caixa</h4>
@@ -899,7 +899,7 @@
                     </div>
 
                     <div class="flex items-end justify-center gap-2 mb-8 mt-2">
-                        <span class="text-4xl font-display font-bold text-smile-text">R$59,90</span>
+                        <span class="text-4xl font-display font-bold text-smile-text">R$67,80</span>
                     </div>
 
                     <ul class="flex flex-col gap-3 w-full mb-8">
@@ -958,12 +958,20 @@
                             <span
                                 class="text-5xl font-display font-bold text-transparent bg-clip-text bg-brand-gradient">R$97,80</span>
                         </div>
-                        <div class="flex items-center justify-center gap-2 mb-2">
-                            <span class="text-sm font-medium text-stone-400 line-through">R$179,70</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-smile-purple-vivid bg-smile-purple-main/10 px-1.5 py-0.5 rounded border border-smile-purple-main/20">ECONOMIZE 46%</span>
+                        <div class="flex flex-col items-center justify-center gap-1 mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm font-medium text-stone-400 line-through">R$203,40</span>
+                                <span class="text-[10px] font-bold uppercase tracking-wider text-green-600 bg-green-100 px-1.5 py-0.5 rounded border border-green-200">FRETE GRÁTIS</span>
+                            </div>
+                            <span class="text-[12px] md:text-[13px] font-extrabold uppercase tracking-wider text-white bg-[#22C55E] px-3 py-1.5 rounded-full shadow-lg animate-pulse mt-1">Economize R$ 105,60 (52% OFF)</span>
                         </div>
-                        <div class="mb-4 text-center">
-                            <span class="text-[11px] font-bold text-smile-purple-vivid bg-smile-purple-main/5 px-2.5 py-1 rounded-full inline-block border border-smile-purple-main/10 w-fit whitespace-nowrap">⚠️ Últimas unidades com esse valor hoje</span>
+                        <div class="mb-4 text-center flex items-center justify-center gap-1.5 text-[12px] font-bold text-red-500 bg-red-50 px-3 py-1.5 rounded-full border border-red-100 w-fit mx-auto">
+                            <iconify-icon icon="lucide:clock" class="text-base animate-pulse"></iconify-icon>
+                            <span id="countdown-timer-kit3">00:15:00</span>
+                        </div>
+
+                        <div class="text-[11px] text-smile-purple-main/70 font-medium text-center mb-4 mt-[-4px]">
+                            💜 Campanha Especial SmileShift — Mês das Mães
                         </div>
 
                         <div
@@ -1021,9 +1029,16 @@
                     <div class="flex items-end justify-center gap-2 mb-2 mt-4">
                         <span class="text-4xl font-display font-bold text-smile-text">R$137,90</span>
                     </div>
-                    <div class="flex items-center justify-center gap-2 mb-4">
-                        <span class="text-sm font-medium text-stone-400 line-through">R$299,50</span>
-                        <span class="text-[10px] font-bold uppercase tracking-wider text-smile-purple-vivid bg-smile-purple-main/10 px-1.5 py-0.5 rounded border border-smile-purple-main/20">ECONOMIZE 54%</span>
+                    <div class="flex flex-col items-center justify-center gap-1 mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm font-medium text-stone-400 line-through">R$339,00</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-green-600 bg-green-100 px-1.5 py-0.5 rounded border border-green-200">FRETE GRÁTIS</span>
+                        </div>
+                        <span class="text-[12px] md:text-[13px] font-extrabold uppercase tracking-wider text-white bg-[#22C55E] px-3 py-1.5 rounded-full shadow-lg animate-pulse mt-1">Economize R$ 201,10 (59% OFF)</span>
+                    </div>
+
+                    <div class="text-[11px] text-smile-purple-main/70 font-medium text-center mb-4 mt-[-4px]">
+                        💜 Campanha Especial SmileShift — Mês das Mães
                     </div>
 
                     <div
@@ -2301,13 +2316,28 @@
 </body>
 
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var timerEl = document.getElementById('countdown-timer-kit3');
+    if(timerEl) {
+        var time = 15 * 60;
+        setInterval(function() {
+            var m = Math.floor(time / 60);
+            var s = time % 60;
+            timerEl.textContent = "00:" + (m < 10 ? '0'+m : m) + ":" + (s < 10 ? '0'+s : s);
+            if(time > 0) time--;
+        }, 1000);
+    }
+});
+</script>
+
 <!-- SmileShift Checkout Button Tracking -->
 <script>
 (function () {
   var BUTTONS = [
-    { selector: 'a[href*="5PDXSVTPR2"]', itemId: 'kit-1', itemName: 'SmileShift V34', itemVariant: '1 caixa', value: 59.90, currency: 'BRL' },
-    { selector: 'a[href*="B1YG7DCUYY"]', itemId: 'kit-3', itemName: 'SmileShift V34', itemVariant: '3 caixas', value: 129.70, currency: 'BRL' },
-    { selector: 'a[href*="BY4OD9QM9A"]', itemId: 'kit-5', itemName: 'SmileShift V34', itemVariant: '5 caixas', value: 159.70, currency: 'BRL' }
+    { selector: 'a[href*="5PDXSVTPR2"]', itemId: 'kit-1', itemName: 'SmileShift V34', itemVariant: '1 caixa', value: 67.80, currency: 'BRL' },
+    { selector: 'a[href*="B1YG7DCUYY"]', itemId: 'kit-3', itemName: 'SmileShift V34', itemVariant: '3 caixas', value: 97.80, currency: 'BRL' },
+    { selector: 'a[href*="BY4OD9QM9A"]', itemId: 'kit-5', itemName: 'SmileShift V34', itemVariant: '5 caixas', value: 137.90, currency: 'BRL' }
   ];
 
   function generateEventId() {
