@@ -2,10 +2,6 @@
 module.exports = {
   content: ["./index.html"],
   safelist: [
-    {
-      pattern: /^(col-span|grid-cols|translate|scale|opacity|backdrop-blur|shadow|z|w|h|max-w|min-h)-/,
-      variants: ['sm', 'md', 'lg'],
-    },
     'absolute', 'relative', 'fixed', 'inset-0', 'flex', 'grid', 'hidden', 'block'
   ],
   theme: {

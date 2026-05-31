@@ -182,11 +182,11 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js" defer></script>
 
     <!-- Required Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
     <!-- LCP Preload -->
     </head>
@@ -238,8 +238,10 @@
 
             <!-- Fullscreen Video Background -->
             <div class="absolute inset-0 w-full h-full z-0 bg-smile-bg flex flex-col justify-start">
+                <!-- Hero Poster Image (LCP Optimization) -->
+                <img id="hero-poster" src="media/webp/sequence/0001.webp" fetchpriority="high" loading="eager" alt="SmileShift Treatment" class="absolute top-0 left-0 w-full h-[75vh] md:h-full object-cover object-center md:object-[5%_center] z-10 scale-[1.01] transition-opacity duration-1000">
                 <!-- Canvas Element covering entire screen for 60fps Scrubbing -->
-                <canvas id="hero-canvas" class="w-full h-[75vh] md:h-full object-cover object-center md:object-[5%_center] relative z-10 scale-[1.01]"></canvas>
+                <canvas id="hero-canvas" class="w-full h-[75vh] md:h-full object-cover object-center md:object-[5%_center] relative z-20 scale-[1.01] opacity-0 transition-opacity duration-1000"></canvas>
 
                 <!-- Cinematic Gradient Overlay for text readability based on Design System -->
                 <div
@@ -262,7 +264,7 @@
                     <div class="absolute -inset-5 bg-white/40 backdrop-blur-xl rounded-[2.5rem] border border-white/50 shadow-2xl -z-10 md:hidden pointer-events-none 
                                 [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)]"></div>
                                 
-                    <div class="inline-flex items-center gap-2 mb-6 md:mb-8 reveal-up delay-100">
+                    <div class="inline-flex items-center gap-2 mb-6 md:mb-8">
                         <span
                             class="w-2 h-2 bg-smile-successLight rounded-full shadow-[0_0_10px_#22C55E] animate-pulse"></span>
                         <span
@@ -272,20 +274,17 @@
 
                     <h1
                         class="font-display text-6xl md:text-7xl lg:text-[7.5rem] font-bold tracking-tighter leading-none mb-6 md:mb-8 text-smile-text flex flex-col items-start">
-                        <span class="text-reveal-wrapper"><span
-                                class="text-reveal-content tracking-tight">Sorriso branco</span></span>
-                        <span class="text-reveal-wrapper -mt-3 md:-mt-6"><span
-                                class="text-reveal-content delay-200 text-outline-purple font-normal tracking-tight">na primeira</span></span>
-                        <span class="text-reveal-wrapper -mt-4 md:-mt-8"><span
-                                class="text-reveal-content delay-300 tracking-tight">aplicação.</span></span>
+                        <span class="tracking-tight">Sorriso branco</span>
+                        <span class="-mt-3 md:-mt-6 text-outline-purple font-normal tracking-tight">na primeira</span>
+                        <span class="-mt-4 md:-mt-8 tracking-tight">aplicação.</span>
                     </h1>
 
                     <p
-                        class="text-base md:text-lg lg:text-xl text-stone-600 max-w-md md:max-w-lg leading-relaxed reveal-up delay-400 font-light text-balance mb-8 md:mb-12">
+                        class="text-base md:text-lg lg:text-xl text-stone-600 max-w-md md:max-w-lg leading-relaxed font-light text-balance mb-8 md:mb-12">
                         A ciência de correção cromática das clínicas, agora na sua casa. Remova manchas amarelas em apenas 30 minutos, <strong class="font-semibold text-smile-purple-main">sem dor e sem química agressiva</strong>.
                     </p>
 
-                    <div class="flex flex-col sm:flex-row gap-4 reveal-up delay-400 w-full sm:w-auto">
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                         <!-- Primary Button (Comprar Agora) -->
                         <button onclick="scrollToOfferCinema()"
                             class="w-full sm:w-auto p-[2px] rounded-[1.25rem] relative overflow-hidden group/beam shadow-2xl shadow-smile-purple-main/30 hover:shadow-[0_0_40px_rgba(34,197,94,0.5)] transition-all duration-700 transform hover:-translate-y-1 active:scale-[0.97] bg-[#3B195E] border border-[#3B195E] hover:bg-[#22C55E] hover:border-[#22C55E]">
@@ -1652,6 +1651,7 @@
 
     <!-- Script Execution -->
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
         // Initialize Lucide Icons
         lucide.createIcons();
 
@@ -1812,6 +1812,12 @@
                 }
                 context.clearRect(0, 0, canvas.width, canvas.height);
                 context.drawImage(bestFrame, 0, 0, canvas.width, canvas.height);
+                
+                if (canvas.style.opacity !== '1') {
+                    canvas.style.opacity = '1';
+                    const poster = document.getElementById('hero-poster');
+                    if (poster) poster.style.opacity = '0';
+                }
             }
         }
 
@@ -1828,6 +1834,8 @@
             },
             onUpdate: renderCanvasFrame
         });
+        
+        }); // End DOMContentLoaded for Canvas/GSAP init
 
         // 5. Initialize SwiperJS for Third Fold Visual Proof
         window.addEventListener('DOMContentLoaded', () => {
