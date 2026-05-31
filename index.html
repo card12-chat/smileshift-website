@@ -1714,33 +1714,104 @@
         const frameCount = 192;
         const currentFrame = index => `media/webp/sequence/${(index + 1).toString().padStart(4, '0')}.webp`;
 
-        const images = [];
+        const images = new Array(frameCount).fill(null);
         const imageSeq = { frame: 0 };
+        
+        // 1. Load initial frames immediately (first 10 frames)
+        const initialFramesCount = 10;
+        let framesLoaded = 0;
 
-        // Preload frames
-        for (let i = 0; i < frameCount; i++) {
+        function loadFrame(index, callback) {
+            if (images[index]) {
+                if (callback) callback();
+                return;
+            }
             const img = new Image();
-            img.src = currentFrame(i);
-            images.push(img);
+            img.onload = () => {
+                images[index] = img;
+                framesLoaded++;
+                if (index === 0) {
+                    canvas.width = img.naturalWidth;
+                    canvas.height = img.naturalHeight;
+                    renderCanvasFrame();
+                }
+                if (callback) callback();
+            };
+            img.src = currentFrame(index);
         }
 
-        // Initialize canvas sizing on first frame load
-        images[0].onload = () => {
-            canvas.width = images[0].naturalWidth;
-            canvas.height = images[0].naturalHeight;
-            renderCanvasFrame();
-        };
+        for (let i = 0; i < initialFramesCount; i++) {
+            loadFrame(i);
+        }
 
-        // Render function
+        // 2. Progressive background loading
+        function loadRemainingFrames() {
+            let currentIndex = initialFramesCount;
+            const batchSize = 10;
+            
+            function loadBatch() {
+                if (currentIndex >= frameCount) return;
+                
+                const endIndex = Math.min(currentIndex + batchSize, frameCount);
+                for (let i = currentIndex; i < endIndex; i++) {
+                    loadFrame(i);
+                }
+                currentIndex = endIndex;
+                
+                // Yield to main thread
+                if (window.requestIdleCallback) {
+                    requestIdleCallback(loadBatch, { timeout: 1000 });
+                } else {
+                    setTimeout(loadBatch, 50);
+                }
+            }
+            
+            loadBatch();
+        }
+
+        // Start progressive loading after window load
+        window.addEventListener('load', () => {
+            if (window.requestIdleCallback) {
+                requestIdleCallback(loadRemainingFrames);
+            } else {
+                setTimeout(loadRemainingFrames, 200);
+            }
+        });
+
+        // Render function (fallback to closest loaded frame)
         function renderCanvasFrame() {
-            if (images[imageSeq.frame] && images[imageSeq.frame].complete) {
-                // Ensure canvas sizing is correct just in case
-                if(canvas.width === 300) { // Default HTML width
-                    canvas.width = images[0].naturalWidth;
-                    canvas.height = images[0].naturalHeight;
+            let targetFrame = Math.round(imageSeq.frame);
+            
+            // Find closest available frame
+            let bestFrame = null;
+            if (images[targetFrame] && images[targetFrame].complete) {
+                bestFrame = images[targetFrame];
+            } else {
+                // Search backwards for the closest loaded frame
+                for (let i = targetFrame - 1; i >= 0; i--) {
+                    if (images[i] && images[i].complete) {
+                        bestFrame = images[i];
+                        break;
+                    }
+                }
+                // If no previous frame, search forwards (rare edge case on init)
+                if (!bestFrame) {
+                    for (let i = targetFrame + 1; i < images.length; i++) {
+                        if (images[i] && images[i].complete) {
+                            bestFrame = images[i];
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            if (bestFrame) {
+                if (canvas.width === 300) { 
+                    canvas.width = bestFrame.naturalWidth;
+                    canvas.height = bestFrame.naturalHeight;
                 }
                 context.clearRect(0, 0, canvas.width, canvas.height);
-                context.drawImage(images[imageSeq.frame], 0, 0, canvas.width, canvas.height);
+                context.drawImage(bestFrame, 0, 0, canvas.width, canvas.height);
             }
         }
 
