@@ -1,0 +1,1112 @@
+[
+  {
+    "path": "media/.DS_Store",
+    "size": "0.01 MB",
+    "reason": "Arquivo oculto do sistema operacional macOS (lixo)."
+  },
+  {
+    "path": "media/Antes e depois/.DS_Store",
+    "size": "0.01 MB",
+    "reason": "Arquivo oculto do sistema operacional macOS (lixo)."
+  },
+  {
+    "path": "media/Antes e depois/1.png",
+    "size": "2.88 MB",
+    "reason": "Sobras de exportação de design ou testes não vinculados ao código base."
+  },
+  {
+    "path": "media/Antes e depois/2.png",
+    "size": "2.01 MB",
+    "reason": "Sobras de exportação de design ou testes não vinculados ao código base."
+  },
+  {
+    "path": "media/Antes e depois/3.png",
+    "size": "3.22 MB",
+    "reason": "Sobras de exportação de design ou testes não vinculados ao código base."
+  },
+  {
+    "path": "media/Antes e depois/4.png",
+    "size": "2.54 MB",
+    "reason": "Sobras de exportação de design ou testes não vinculados ao código base."
+  },
+  {
+    "path": "media/Gemini_Generated_Image_j0c0oyj0c0oyj0c0.png",
+    "size": "6.92 MB",
+    "reason": "Sobras de exportação de design ou testes não vinculados ao código base."
+  },
+  {
+    "path": "media/IMAGEM 1.png",
+    "size": "1.98 MB",
+    "reason": "Sobras de exportação de design ou testes não vinculados ao código base."
+  },
+  {
+    "path": "media/IMAGEM 2.png",
+    "size": "1.37 MB",
+    "reason": "Sobras de exportação de design ou testes não vinculados ao código base."
+  },
+  {
+    "path": "media/VIDEO 1.mp4",
+    "size": "5.69 MB",
+    "reason": "Vídeos de scrub descontinuados (migrado para Canvas GSAP)."
+  },
+  {
+    "path": "media/VIDEO 2.mp4",
+    "size": "4.66 MB",
+    "reason": "Vídeos de scrub descontinuados (migrado para Canvas GSAP)."
+  },
+  {
+    "path": "media/VIDEO 3.mp4",
+    "size": "15.68 MB",
+    "reason": "Vídeos de scrub descontinuados (migrado para Canvas GSAP)."
+  },
+  {
+    "path": "media/VIDEO 4.mp4",
+    "size": "5.11 MB",
+    "reason": "Vídeos de scrub descontinuados (migrado para Canvas GSAP)."
+  },
+  {
+    "path": "media/VIDEO_SCRUB_OPTIMIZED.mp4",
+    "size": "9.27 MB",
+    "reason": "Vídeos de scrub descontinuados (migrado para Canvas GSAP)."
+  },
+  {
+    "path": "media/Whisk_60557b1be890459b8ed466649b4acfd0eg.png",
+    "size": "1.62 MB",
+    "reason": "Sobras de exportação de design ou testes não vinculados ao código base."
+  },
+  {
+    "path": "media/seguro (1).png",
+    "size": "0.20 MB",
+    "reason": "Sobras de exportação de design ou testes não vinculados ao código base."
+  },
+  {
+    "path": "media/sequence/0001.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0002.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0003.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0004.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0005.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0006.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0007.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0008.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0009.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0010.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0011.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0012.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0013.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0014.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0015.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0016.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0017.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0018.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0019.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0020.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0021.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0022.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0023.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0024.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0025.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0026.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0027.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0028.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0029.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0030.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0031.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0032.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0033.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0034.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0035.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0036.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0037.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0038.jpg",
+    "size": "0.03 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0039.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0040.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0041.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0042.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0043.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0044.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0045.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0046.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0047.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0048.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0049.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0050.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0051.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0052.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0053.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0054.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0055.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0056.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0057.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0058.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0059.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0060.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0061.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0062.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0063.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0064.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0065.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0066.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0067.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0068.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0069.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0070.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0071.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0072.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0073.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0074.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0075.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0076.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0077.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0078.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0079.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0080.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0081.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0082.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0083.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0084.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0085.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0086.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0087.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0088.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0089.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0090.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0091.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0092.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0093.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0094.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0095.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0096.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0097.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0098.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0099.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0100.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0101.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0102.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0103.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0104.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0105.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0106.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0107.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0108.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0109.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0110.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0111.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0112.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0113.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0114.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0115.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0116.jpg",
+    "size": "0.04 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0117.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0118.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0119.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0120.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0121.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0122.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0123.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0124.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0125.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0126.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0127.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0128.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0129.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0130.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0131.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0132.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0133.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0134.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0135.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0136.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0137.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0138.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0139.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0140.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0141.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0142.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0143.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0144.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0145.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0146.jpg",
+    "size": "0.05 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0147.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0148.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0149.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0150.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0151.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0152.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0153.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0154.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0155.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0156.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0157.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0158.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0159.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0160.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0161.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0162.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0163.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0164.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0165.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0166.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0167.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0168.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0169.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0170.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0171.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0172.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0173.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0174.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0175.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0176.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0177.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0178.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0179.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0180.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0181.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0182.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0183.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0184.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0185.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0186.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0187.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0188.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0189.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0190.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0191.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/sequence/0192.jpg",
+    "size": "0.06 MB",
+    "reason": "Frames da sequência original (migrado para media/webp/sequence)."
+  },
+  {
+    "path": "media/webp/acao-v34-30-minutos.webp",
+    "size": "0.30 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/antes-e-depois/dentes-brancos-depois-1.webp",
+    "size": "0.04 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/antes-e-depois/dentes-brancos-depois-2.webp",
+    "size": "0.06 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/antes-e-depois/manchas-amarelas-antes-1.webp",
+    "size": "0.05 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/antes-e-depois/manchas-amarelas-antes-2.webp",
+    "size": "0.07 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/cliente-smileshift-1.webp",
+    "size": "0.02 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/cliente-smileshift-2.webp",
+    "size": "0.03 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/cliente-smileshift-3.webp",
+    "size": "0.03 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/cliente-smileshift-4.webp",
+    "size": "0.02 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/cliente-smileshift-5.webp",
+    "size": "0.02 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/cliente-smileshift-6.webp",
+    "size": "0.02 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/compra-segura-smileshift.webp",
+    "size": "0.05 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/hero-smileshift-v34.webp",
+    "size": "0.06 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  },
+  {
+    "path": "media/webp/produto-smileshift.webp",
+    "size": "0.03 MB",
+    "reason": "WebP gerados em otimização revertida (HTML puxa .jpg/.png originais)."
+  }
+]
