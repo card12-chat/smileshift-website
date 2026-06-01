@@ -1656,7 +1656,7 @@
         lucide.createIcons();
 
         // 1. Initialize Lenis for Smooth Scrolling
-        const lenis = new Lenis({
+        window.lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             direction: 'vertical',
@@ -1669,10 +1669,10 @@
         });
 
         // Sync GSAP with Lenis
-        lenis.on('scroll', ScrollTrigger.update);
+        window.lenis.on('scroll', ScrollTrigger.update);
 
         gsap.ticker.add((time) => {
-            lenis.raf(time * 1000);
+            window.lenis.raf(time * 1000);
         });
         gsap.ticker.lagSmoothing(0);
 
@@ -2018,7 +2018,7 @@
         function scrollToOffer() {
             const offerSection = document.getElementById('fifth-fold');
             if (offerSection) {
-                lenis.scrollTo(offerSection, { offset: -50 }); // Leaves breathing room at the top
+                window.lenis.scrollTo(offerSection, { offset: -50 }); // Leaves breathing room at the top
                 
                 // Add dynamic pulse highlight to the 3-box central card when it lands
                 setTimeout(() => {
@@ -2048,7 +2048,7 @@
             const offerSection = document.getElementById('fifth-fold');
             if (offerSection) {
                 // Prolonged 2.8s duration with custom quart easing for a guided narrative feel
-                lenis.scrollTo(offerSection, { 
+                window.lenis.scrollTo(offerSection, { 
                     offset: -50, 
                     duration: 2.8,
                     easing: cinematicEase 
@@ -2077,7 +2077,7 @@
             const howItWorksSection = document.getElementById('second-fold');
             if (howItWorksSection) {
                 // 1.8s duration for the immediate next section, slow enough to appreciate the video exit
-                lenis.scrollTo(howItWorksSection, { 
+                window.lenis.scrollTo(howItWorksSection, { 
                     offset: 0, 
                     duration: 1.8,
                     easing: cinematicEase 
@@ -2125,7 +2125,7 @@
             const section = document.querySelector(targetSelector);
             if (section) {
                 // Prolonged sweep to provide maximum visual absorption of the entire stack.
-                lenis.scrollTo(section, {
+                window.lenis.scrollTo(section, {
                     offset: targetSelector === '#fifth-fold' ? -50 : 0,
                     duration: 3,
                     easing: cinematicEase
