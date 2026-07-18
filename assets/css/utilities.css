@@ -1,0 +1,14 @@
+/* Utility styles */
+.text-balance {
+    text-wrap: balance;
+}
+
+.text-outline-purple {
+    -webkit-text-stroke: 1px #7B3FC7;
+    color: transparent;
+}
+
+.text-outline-white {
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+    color: transparent;
+}

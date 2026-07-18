@@ -1,0 +1,8 @@
+/* Additional screen media adjustments */
+@media (max-width: 1024px) {
+    /* tablet layout optimizations */
+}
+
+@media (max-width: 768px) {
+    /* mobile layout optimizations */
+}

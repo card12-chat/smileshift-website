@@ -1,0 +1,66 @@
+<!-- Component: FAQ Accordion (Reference) -->
+<section id="sixth-fold" class="relative w-full bg-[#FAFAFC] py-24 md:py-32 z-20 border-t border-stone-200/60">
+    <div class="max-w-[1240px] w-full mx-auto px-6 md:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            <!-- Left Info Block -->
+            <div class="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left">
+                <div class="anim-6-tag inline-flex items-center gap-2 mb-4 opacity-0 translate-y-6">
+                    <span class="w-1.5 h-1.5 bg-smile-purple-vivid rounded-full shadow-[0_0_8px_#7B3FC7] animate-pulse"></span>
+                    <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-smile-purple-main font-bold">DÚVIDAS</span>
+                </div>
+                <h2 class="anim-6-title font-display text-4xl font-bold tracking-tight text-smile-text mb-6 opacity-0 translate-y-6 leading-none">
+                    Suas perguntas, respondidas.
+                </h2>
+                <p class="anim-6-sub text-stone-500 font-light leading-relaxed mb-10 opacity-0 translate-y-6 max-w-sm">
+                    Reunimos as respostas para as principais dúvidas sobre tecnologia, aplicação e segurança do SmileShift.
+                </p>
+            </div>
+
+            <!-- FAQ Accordion -->
+            <div class="lg:col-span-8 flex flex-col w-full h-full lg:pl-8">
+                <div class="mb-10 text-center lg:text-left anim-6-faq opacity-0 translate-y-6">
+                    <h3 class="font-display text-2xl font-bold text-smile-text mb-2">Perguntas Frequentes (FAQ)</h3>
+                    <p class="text-sm text-stone-500">Tire suas dúvidas técnicas e comerciais.</p>
+                </div>
+
+                <div class="space-y-6 w-full" id="faq-accordion" itemscope itemtype="https://schema.org/FAQPage">
+                    <!-- Question 1 -->
+                    <div class="anim-6-faq faq-item border border-stone-200 rounded-2xl bg-white transition-all duration-300 opacity-0 translate-y-6 overflow-hidden" id="faq-item-1" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between p-6 md:p-8 text-left group">
+                            <span class="font-bold text-smile-text text-[15px] md:text-[16px] group-hover:text-smile-purple-main transition-colors duration-300" itemprop="name">
+                                Como o SmileShift clareia os dentes?
+                            </span>
+                            <div class="w-8 h-8 rounded-full bg-stone-100 text-smile-purple-main flex items-center justify-center flex-shrink-0 transition-all duration-300" id="faq-icon-1">
+                                <iconify-icon icon="lucide:plus" class="text-lg"></iconify-icon>
+                            </div>
+                        </button>
+                        <div class="faq-content h-0 overflow-hidden transition-all duration-300 ease-in-out px-6 md:px-8" id="faq-content-1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <div class="pb-6 md:pb-8 text-stone-500 text-sm md:text-[15px] leading-relaxed font-light" itemprop="text">
+                                <p>Ele utiliza a tecnologia de neutralização cromática V34. O roxo é o oposto complementar do amarelo no círculo cromático. Ao aplicar a fita, os pigmentos roxos cobrem e camuflam subtons amarelados do dente, criando uma percepção visual imediata de um sorriso mais branco e brilhante.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="anim-6-faq faq-item border border-stone-200 rounded-2xl bg-white transition-all duration-300 opacity-0 translate-y-6 overflow-hidden" id="faq-item-2" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                        <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between p-6 md:p-8 text-left group">
+                            <span class="font-bold text-smile-text text-[15px] md:text-[16px] group-hover:text-smile-purple-main transition-colors duration-300" itemprop="name">
+                                Causa sensibilidade nos dentes?
+                            </span>
+                            <div class="w-8 h-8 rounded-full bg-stone-100 text-smile-purple-main flex items-center justify-center flex-shrink-0 transition-all duration-300" id="faq-icon-2">
+                                <iconify-icon icon="lucide:plus" class="text-lg"></iconify-icon>
+                            </div>
+                        </button>
+                        <div class="faq-content h-0 overflow-hidden transition-all duration-300 ease-in-out px-6 md:px-8" id="faq-content-2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                            <div class="pb-6 md:pb-8 text-stone-500 text-sm md:text-[15px] leading-relaxed font-light" itemprop="text">
+                                <p>Não! A nossa fórmula foi desenvolvida especificamente livre de peróxido de hidrogênio (ingrediente clássico causador de dor nos clareamentos clínicos convencionais). O SmileShift é 100% seguro para o esmalte e gengivas sensíveis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

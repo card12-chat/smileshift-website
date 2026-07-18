@@ -1,0 +1,47 @@
+/* Entrance reveals and animations */
+.text-reveal-wrapper {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.text-reveal-content {
+    transform: translateY(110%);
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
+    display: block;
+}
+
+.reveal-active .text-reveal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+.delay-400 {
+    transition-delay: 0.4s;
+}

@@ -1,0 +1,129 @@
+<!-- Component: Hero with Video & Kit Selector (Reference) -->
+<section id="hero-offer" class="relative w-full bg-[#fbfbfe] pt-28 pb-12 lg:pt-36 lg:pb-20 overflow-hidden z-25">
+    <!-- Ambient Blur Glows -->
+    <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="w-[600px] h-[600px] bg-smile-purple-light/10 rounded-full blur-[120px] absolute -top-40 -right-40"></div>
+        <div class="w-[800px] h-[800px] bg-brand-gradient opacity-[0.03] rounded-full blur-[160px] absolute -bottom-80 -left-80"></div>
+    </div>
+
+    <div class="max-w-[1240px] w-full mx-auto px-6 md:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            <!-- Left: Autoplay Video Loop (Cinema Glow) -->
+            <div class="lg:col-span-6 flex flex-col justify-center items-center relative w-full">
+                <div class="absolute inset-0 bg-smile-purple-light/20 blur-[100px] rounded-full w-[90%] h-[90%] scale-105 top-2 left-2 pointer-events-none mix-blend-multiply animate-pulse-glow z-0"></div>
+                <div class="relative w-full aspect-[16/9] lg:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border border-black/[0.04] z-10 bg-black">
+                    <video autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover">
+                        <source src="media/VIDEO 2.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeos HTML5.
+                    </video>
+                </div>
+            </div>
+
+            <!-- Right: Premium Offer Details & Seletor de Kits -->
+            <div class="lg:col-span-6 flex flex-col text-left">
+                <!-- Geolocation and Active Viewers Badge Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                    <div id="geo-badge" class="flex items-center gap-2 bg-smile-purple-main/5 text-smile-purple-main border border-smile-purple-main/10 px-3 py-2 rounded-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)]">
+                        <iconify-icon icon="lucide:map-pin" class="text-sm text-smile-purple-vivid animate-pulse"></iconify-icon>
+                        <span id="geo-badge-text" class="text-xs font-bold">Oferta liberada hoje</span>
+                    </div>
+                    <div id="live-activity-badge" class="flex items-center gap-2 bg-red-50 text-red-600 border border-red-100 px-3 py-2 rounded-xl shadow-sm">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+                        </span>
+                        <span id="live-activity-text" class="text-xs font-bold">Carregando visualizações...</span>
+                    </div>
+                </div>
+
+                <h1 class="font-display text-3xl md:text-4xl lg:text-[2.8rem] font-bold tracking-tight text-smile-text leading-[1.1] mb-4 uppercase">
+                    Fitas Clareadoras SmileShift V34 Roxas
+                </h1>
+
+                <!-- Trust indicators -->
+                <div class="flex flex-wrap items-center gap-3 mb-6 text-xs text-stone-600 font-medium">
+                    <div class="flex items-center gap-1">
+                        <span class="flex text-amber-500 gap-0.5">
+                            <iconify-icon icon="bi:star-fill" class="text-[10px]"></iconify-icon>
+                            <iconify-icon icon="bi:star-fill" class="text-[10px]"></iconify-icon>
+                            <iconify-icon icon="bi:star-fill" class="text-[10px]"></iconify-icon>
+                            <iconify-icon icon="bi:star-fill" class="text-[10px]"></iconify-icon>
+                            <iconify-icon icon="bi:star-fill" class="text-[10px]"></iconify-icon>
+                        </span>
+                        <span class="font-bold text-stone-800 ml-1">4.9</span>
+                        <span class="text-stone-400 font-normal ml-0.5">(+7.000 clientes satisfeitos)</span>
+                    </div>
+                </div>
+
+                <!-- Apple Store style Kit Selection Cards -->
+                <div class="space-y-4 mb-6">
+                    <!-- Kit 1 -->
+                    <div id="kit-card-1" onclick="changeSelectedKit(1)" class="kit-selection-card flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white/40 shadow-sm hover:border-smile-purple-main/40 transition-all duration-300 cursor-pointer group">
+                        <div class="flex items-center gap-3">
+                            <div class="select-bullet w-4 h-4 rounded-full border border-stone-300 flex items-center justify-center group-hover:border-smile-purple-main transition-colors"></div>
+                            <div>
+                                <span class="block text-sm font-bold text-smile-text">1 Caixa (Uso Inicial)</span>
+                                <span class="block text-[11px] text-stone-400 font-medium mt-0.5">Ideal para começar</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold text-smile-text">R$ 69,90</span>
+                    </div>
+
+                    <!-- Kit 3 (Recommended) -->
+                    <div id="kit-card-3" onclick="changeSelectedKit(3)" class="kit-selection-card flex items-center justify-between p-4 rounded-2xl border border-smile-purple-main/60 bg-white shadow-md shadow-smile-purple-main/5 transition-all duration-300 cursor-pointer group">
+                        <div class="flex items-center gap-3">
+                            <div class="select-bullet w-4 h-4 rounded-full border-2 border-smile-purple-main flex items-center justify-center bg-smile-purple-main shadow-[0_0_8px_rgba(90,44,140,0.4)]">
+                                <span class="w-1.5 h-1.5 rounded-full bg-white"></span>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="block text-sm font-bold text-smile-text">3 Caixas (Recomendado)</span>
+                                    <span class="text-[9px] font-bold text-white bg-smile-purple-vivid px-2 py-0.5 rounded-full uppercase tracking-wider">Mais vendido</span>
+                                </div>
+                                <span class="block text-[11px] text-stone-400 font-medium mt-0.5">Melhor custo-benefício</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold text-smile-text">R$ 92,90</span>
+                    </div>
+
+                    <!-- Kit 5 -->
+                    <div id="kit-card-5" onclick="changeSelectedKit(5)" class="kit-selection-card flex items-center justify-between p-4 rounded-2xl border border-stone-200 bg-white/40 shadow-sm hover:border-smile-purple-main/40 transition-all duration-300 cursor-pointer group">
+                        <div class="flex items-center gap-3">
+                            <div class="select-bullet w-4 h-4 rounded-full border border-stone-300 flex items-center justify-center group-hover:border-smile-purple-main transition-colors"></div>
+                            <div>
+                                <div class="flex items-center gap-2">
+                                    <span class="block text-sm font-bold text-smile-text">5 Caixas (Tratamento Premium)</span>
+                                    <span class="text-[9px] font-bold text-white bg-green-500 px-2 py-0.5 rounded-full uppercase tracking-wider">Maior economia</span>
+                                </div>
+                                <span class="block text-[11px] text-stone-400 font-medium mt-0.5">Tratamento Premium Completo</span>
+                            </div>
+                        </div>
+                        <span class="text-sm font-bold text-smile-text">R$ 132,90</span>
+                    </div>
+                </div>
+
+                <!-- Dynamic Pricing Summary Card -->
+                <div id="kit-summary-container" class="bg-stone-50 border border-stone-200/80 p-5 rounded-2xl mb-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span id="active-kit-title" class="text-xs font-bold text-smile-text uppercase tracking-wider">3 Caixas (Kit Recomendado)</span>
+                        <span id="active-kit-savings" class="text-xs font-bold text-green-600">Economize R$ 116,80 (56% OFF)</span>
+                    </div>
+                    <div class="flex items-baseline justify-between pt-2 border-t border-stone-200/60">
+                        <div>
+                            <span id="active-kit-unit-price" class="text-xs text-stone-400 block font-medium">R$ 30,96 por caixa</span>
+                        </div>
+                        <span id="active-kit-total-price" class="text-2xl font-black text-smile-text">R$ 92,90</span>
+                    </div>
+                </div>
+
+                <!-- Checkout Button & Security seals -->
+                <a id="cta-checkout-button" href="https://seguro.smileshift.co/r/B1YG7DCUYY" class="w-full py-5 bg-[#22C55E] hover:bg-green-600 text-white font-mono text-sm md:text-base font-bold uppercase tracking-[0.2em] rounded-2xl text-center shadow-lg shadow-green-500/20 hover:shadow-green-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 animate-pulse-glow flex items-center justify-center gap-3">
+                    Garantiu Meu Kit Com Desconto
+                    <iconify-icon icon="lucide:arrow-right" class="text-lg"></iconify-icon>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>

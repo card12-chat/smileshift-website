@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html"],
+  content: ["./index.html", "./oferta.html"],
   safelist: [
     'absolute', 'relative', 'fixed', 'inset-0', 'flex', 'grid', 'hidden', 'block'
   ],
