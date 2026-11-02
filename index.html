@@ -268,6 +268,24 @@
             background: #16A34A !important;
             opacity: 1;
         }
+        
+        /* Black Friday Refined Promotional Badges */
+        .bg-bf-pill {
+            background: linear-gradient(135deg, #111111 0%, #1C1C1C 50%, #2A2A2A 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        }
+        .bg-bf-pill-alt {
+            background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 50%, #3A3A3C 100%);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+        }
+        .bg-bf-top-badge {
+            background: linear-gradient(135deg, #111111 0%, #1C1C1C 50%, #2A2A2A 100%);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+        }
+        .bg-bf-campaign {
+            background: linear-gradient(135deg, #111111 0%, #1C1C1C 50%, #2A2A2A 100%);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+        }
     </style>
     </head>
 
@@ -409,7 +427,7 @@
                                         <div class="flex flex-col w-full pr-2">
                                             <div class="flex flex-wrap items-center gap-2 mb-0.5">
                                                 <span class="font-bold text-smile-text text-[15px] leading-tight">3 Caixas</span>
-                                                <span class="bg-brand-gradient text-white text-[9px] uppercase font-bold tracking-widest py-[3px] px-2 rounded-md shadow-sm">MAIS VENDIDO</span>
+                                                <span class="bg-bf-pill text-white text-[8px] md:text-[8.5px] uppercase font-bold tracking-wider py-[2.5px] px-2.5 rounded-full border border-white/10 whitespace-nowrap inline-flex items-center">OFERTA DE BLACKFRIDAY</span>
                                             </div>
                                             <div class="flex items-center w-full">
                                                 <span class="text-xs text-stone-500 font-medium">Melhor custo-benefício</span>
@@ -432,7 +450,7 @@
                                         <div class="flex flex-col w-full pr-2">
                                             <div class="flex flex-wrap items-center gap-2 mb-0.5">
                                                 <span class="font-bold text-smile-text text-[15px] leading-tight">5 Caixas</span>
-                                                <span class="bg-smile-blue-tech text-white text-[9px] uppercase font-bold tracking-widest py-[3px] px-2 rounded-md shadow-sm">MAIOR ECONOMIA</span>
+                                                <span class="bg-bf-pill-alt text-white text-[8px] md:text-[8.5px] uppercase font-bold tracking-wider py-[2.5px] px-2.5 rounded-full border border-white/10 whitespace-nowrap inline-flex items-center">MAIOR ECONOMIA</span>
                                             </div>
                                             <div class="flex items-center w-full">
                                                 <span class="text-xs text-stone-500 font-medium">Tratamento Premium Completo</span>
@@ -1087,8 +1105,8 @@
                     <!-- Highlight Badge -->
                     <div class="absolute top-0 inset-x-0 flex justify-center -translate-y-[1px]">
                         <div
-                            class="bg-brand-gradient text-white text-[10px] uppercase font-bold tracking-widest py-1.5 px-6 rounded-b-xl shadow-md">
-                            MAIS VENDIDO
+                            class="bg-bf-top-badge text-white text-[9px] md:text-[9.5px] uppercase font-bold tracking-wider py-1.5 px-6 rounded-b-xl border-b border-x border-white/10 whitespace-nowrap">
+                            OFERTA DE BLACKFRIDAY
                         </div>
                     </div>
 
@@ -1123,10 +1141,10 @@
                         </div>
 
                         <div class="mb-5 mt-0 flex justify-center w-full relative group/campaign cursor-default">
-                            <div class="flex items-center justify-center gap-1.5 bg-gradient-to-r from-smile-purple-main/5 via-smile-purple-main/15 to-smile-purple-main/5 border border-smile-purple-main/20 px-3 py-1.5 rounded-lg shadow-sm group-hover/campaign:shadow-md group-hover/campaign:border-smile-purple-main/40 transition-all duration-500 overflow-hidden relative">
-                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent -translate-x-full group-hover/campaign:translate-x-full transition-transform duration-[1500ms] ease-in-out"></div>
-                                <span class="text-[13px] relative z-10 animate-pulse">✨</span>
-                                <span class="text-[10px] md:text-[11px] font-bold text-smile-purple-main uppercase tracking-widest relative z-10">Campanha Exclusiva<span class="block text-[8px] md:text-[9px] font-medium normal-case tracking-normal text-smile-purple-main/70 mt-0.5">Ofertas por Tempo Limitado ⏱️</span></span>
+                            <div class="flex items-center justify-center gap-2 bg-bf-campaign border border-white/10 px-4 py-1.5 rounded-full shadow-sm group-hover/campaign:shadow-md group-hover/campaign:border-white/20 transition-all duration-500 overflow-hidden relative">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover/campaign:translate-x-full transition-transform duration-[1500ms] ease-in-out"></div>
+                                <span class="text-[12px] relative z-10 animate-pulse">✨</span>
+                                <span class="text-[10px] md:text-[10.5px] font-bold text-white uppercase tracking-wider relative z-10">Campanha Black Friday<span class="block text-[8px] md:text-[8.5px] font-normal normal-case tracking-normal text-stone-300 mt-0.5">Ofertas por Tempo Limitado ⏱️</span></span>
                             </div>
                         </div>
 
@@ -1194,10 +1212,10 @@
                     </div>
 
                     <div class="mb-5 mt-0 flex justify-center w-full relative group/campaign cursor-default">
-                        <div class="flex items-center justify-center gap-1.5 bg-gradient-to-r from-smile-purple-main/5 via-smile-purple-main/15 to-smile-purple-main/5 border border-smile-purple-main/20 px-3 py-1.5 rounded-lg shadow-sm group-hover/campaign:shadow-md group-hover/campaign:border-smile-purple-main/40 transition-all duration-500 overflow-hidden relative">
-                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 to-transparent -translate-x-full group-hover/campaign:translate-x-full transition-transform duration-[1500ms] ease-in-out"></div>
-                            <span class="text-[13px] relative z-10 animate-pulse">✨</span>
-                            <span class="text-[10px] md:text-[11px] font-bold text-smile-purple-main uppercase tracking-widest relative z-10">Campanha Exclusiva<span class="block text-[8px] md:text-[9px] font-medium normal-case tracking-normal text-smile-purple-main/70 mt-0.5">Ofertas por Tempo Limitado ⏱️</span></span>
+                        <div class="flex items-center justify-center gap-2 bg-bf-campaign border border-white/10 px-4 py-1.5 rounded-full shadow-sm group-hover/campaign:shadow-md group-hover/campaign:border-white/20 transition-all duration-500 overflow-hidden relative">
+                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover/campaign:translate-x-full transition-transform duration-[1500ms] ease-in-out"></div>
+                            <span class="text-[12px] relative z-10 animate-pulse">✨</span>
+                            <span class="text-[10px] md:text-[10.5px] font-bold text-white uppercase tracking-wider relative z-10">Campanha Black Friday<span class="block text-[8px] md:text-[8.5px] font-normal normal-case tracking-normal text-stone-300 mt-0.5">Ofertas por Tempo Limitado ⏱️</span></span>
                         </div>
                     </div>
 
